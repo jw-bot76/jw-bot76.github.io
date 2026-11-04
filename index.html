@@ -590,6 +590,57 @@ details.more[open] summary::after { transform: rotate(45deg); }
 .checks li b { color: var(--pass); }
 @media (max-width: 1020px) { .cs-roles, .goal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 26px; } }
 @media (max-width: 640px) { .cs-two, .succ-grid, .cs-roles, .goal-grid { grid-template-columns: 1fr; } .journey { grid-template-columns: 1fr 1fr; } .sol { grid-template-columns: 1fr; gap: 20px; } .sol .phone.lp { max-width: 200px; justify-self: center; } }
+/* ---------- PMO case: DingTalk-style illustrations (fixed light palette, like the real app) ---------- */
+.dt-win { width: 100%; max-width: 900px; background: #fff; color: #1f2329; border-radius: 16px; box-shadow: 0 24px 60px rgba(15,13,34,.22); overflow: hidden; font-family: var(--f-body); font-size: .74rem; transform: rotate(-1deg); }
+.dt-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #f5f6fb; border-bottom: 1px solid #e8eaf2; }
+.dt-bar > i { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; } .dt-bar > i:nth-child(2) { background: #febc2e; } .dt-bar > i:nth-child(3) { background: #28c840; }
+.dt-bar b { margin-left: 8px; font-family: var(--f-display); font-size: .8rem; color: #1f2329; white-space: nowrap; }
+.dt-seg { margin-left: auto; display: flex; gap: 2px; background: #eceef5; border-radius: 9px; padding: 2px; }
+.dt-seg em { font-style: normal; padding: 3px 9px; border-radius: 7px; color: #646a73; } .dt-seg em.on { background: #fff; color: #1f2329; font-weight: 700; }
+.dt-share { background: #3370ff; color: #fff; border-radius: 7px; padding: 3px 10px; font-weight: 700; }
+.dt-body { display: grid; grid-template-columns: 210px minmax(0, 1fr); }
+.dt-side { list-style: none; margin: 0; padding: 10px 8px; border-right: 1px solid #eef0f5; display: grid; gap: 1px; align-content: start; }
+.dt-side li { padding: 4px 8px; border-radius: 7px; color: #1f2329; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dt-side li.h { font-weight: 800; padding-bottom: 6px; } .dt-side li.in { padding-left: 22px; color: #3d4350; } .dt-side li.on { background: #e1eaff; color: #3370ff; font-weight: 700; }
+.dt-main { padding: 8px 12px 12px; min-width: 0; }
+.dt-tabs { display: flex; gap: 14px; border-bottom: 1px solid #eef0f5; padding: 4px 2px 7px; white-space: nowrap; overflow: hidden; }
+.dt-tabs span { color: #646a73; } .dt-tabs span.on { color: #1f2329; font-weight: 800; box-shadow: 0 9px 0 -7px #3370ff; }
+.dt-tools { display: flex; gap: 8px; padding: 8px 0; white-space: nowrap; overflow: hidden; }
+.dt-tools span { background: #e8f8ef; color: #1f7a4d; border-radius: 6px; padding: 2px 8px; } .dt-tools span + span { background: #f0ecfb; color: #5b45c6; }
+.dt-row { display: grid; grid-template-columns: minmax(0, 2.2fr) 1fr 1.1fr .8fr; gap: 8px; align-items: center; padding: 6px 4px; border-bottom: 1px solid #f1f2f6; }
+.dt-row > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 5px; }
+.dt-hd { color: #646a73; font-weight: 700; background: #fafbfd; }
+.dt-grp { padding: 7px 4px 4px; color: #646a73; } .dt-grp em { font-style: normal; background: #eef2ff; color: #3370ff; border-radius: 6px; padding: 1px 8px; margin-right: 6px; font-weight: 700; }
+.st { font-weight: 700; border-radius: 999px; padding: 2px 8px; font-size: .68rem; } .st.ok { background: #1f9d55; color: #fff; } .st.as { background: #e6f6f4; color: #1d7c74; }
+.tm { width: 16px; height: 16px; border-radius: 50%; display: inline-grid; place-items: center; color: #fff; font-size: .6rem; } .tm.m { background: #6b4fd8; } .tm.t, .tm.p, .tm.f { background: #3370ff; }
+.dt-row .late { color: #d83931; font-weight: 800; }
+.pmo-vis { width: 100%; max-width: 240px; }
+.pmo-tree { list-style: none; margin: 0; padding: 16px; background: #fff; color: #1f2329; border-radius: 18px; box-shadow: var(--shadow); font-size: .8rem; display: grid; gap: 6px; }
+.pmo-tree ul { list-style: none; margin: 4px 0 0; padding: 0 0 0 14px; display: grid; gap: 3px; color: #646a73; }
+.pmo-tree > li.grp { font-weight: 700; } .pmo-tree ul li { font-weight: 400; }
+.dt-doc { background: #fff; color: #1f2329; border-radius: 18px; padding: 16px; box-shadow: var(--shadow); font-size: .74rem; display: grid; gap: 6px; background-image: linear-gradient(160deg, #fbe9fb 0, #fff 38%); }
+.dt-doc h4 { margin: 0; font-family: var(--f-display); font-size: 1.25rem; font-weight: 900; color: #1f2329; }
+.dt-doc .dd-crumb { color: #8f959e; font-size: .66rem; } .dt-doc .dd-sub { color: #3d4350; }
+.dt-doc .dd-h { font-weight: 800; margin-top: 4px; }
+.dt-doc ul, .dt-doc ol { margin: 0; padding-left: 16px; display: grid; gap: 2px; color: #3d4350; } .dt-doc li.red { color: #d83931; } .dt-doc em { color: #8f959e; font-style: normal; }
+.dd-tbl { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #e8eaf2; border-radius: 6px; overflow: hidden; } .dd-tbl span { padding: 4px 6px; border-bottom: 1px solid #e8eaf2; } .dd-tbl span:nth-child(odd) { border-right: 1px solid #e8eaf2; } .dd-tbl span:nth-last-child(-n+2) { border-bottom: 0; }
+.pmo-mail { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 10px; box-shadow: var(--shadow); }
+.pm-meta span { font-family: var(--f-mono); font-size: .7rem; color: var(--orchid); font-weight: 600; }
+.pm-sub { font-family: var(--f-display); font-weight: 800; color: var(--ink); font-size: .9rem; line-height: 1.3; }
+.pmo-mail ol { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: .82rem; color: var(--muted); } .pmo-mail ol b { display: block; color: var(--ink); }
+.journey.j7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.slip-wrap { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 22px; align-items: center; }
+.pmo-slip { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px 22px 16px; display: grid; gap: 22px; }
+.ps-row { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 14px; align-items: center; } .ps-row b { font-family: var(--f-display); color: var(--ink); font-size: .9rem; }
+.ps-bar { position: relative; height: 34px; border-radius: 8px; background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 12.5%); }
+.ps-bar::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: var(--line); }
+.ps-bar i, .ps-legend i { position: absolute; top: 50%; left: var(--x); width: 14px; height: 14px; border-radius: 50%; transform: translate(-50%, -50%); }
+.ps-bar i.plan, .ps-legend i.plan { background: var(--surface); border: 2px dashed var(--muted); }
+.ps-bar i.act, .ps-legend i.act { background: var(--fail); } .ps-bar i.rel, .ps-legend i.rel { background: var(--pass); border-radius: 4px; }
+.ps-bar em { position: absolute; left: var(--x); top: -10px; transform: translateX(10px); font-style: normal; font-family: var(--f-mono); font-size: .68rem; color: var(--fail); white-space: nowrap; } .ps-bar em.r { color: var(--pass); transform: translateX(-110%); }
+.ps-legend { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; font-size: .78rem; color: var(--muted); } .ps-legend li { position: relative; padding-left: 20px; } .ps-legend i { left: 7px; }
+@media (max-width: 1020px) { .journey.j7 { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 26px; } .slip-wrap { grid-template-columns: 1fr; } .dt-body { grid-template-columns: 170px minmax(0, 1fr); } }
+@media (max-width: 640px) { .journey.j7 { grid-template-columns: 1fr 1fr; } .dt-side { display: none; } .dt-body { grid-template-columns: 1fr; } .dt-seg, .dt-share { display: none; } .dt-win { transform: none; font-size: .68rem; } .dt-row { grid-template-columns: minmax(0, 1.6fr) 1fr 1fr; } .dt-row > span:last-child { display: none; } .ps-row { grid-template-columns: 1fr; gap: 6px; } .pmo-vis { max-width: none; } .ps-bar em { font-size: .6rem; } }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -754,7 +805,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
           <div class="wc-txt">
             <p class="eyebrow">PMO · Tuntun Sekuritas · 2025</p>
             <h3>PMO tracking board</h3>
-            <p>One board for every project, PRD and status, plus SOPs and follow-ups.</p>
+            <p>One board, one SOP and one weekly rhythm for every requirement, from MRD to live.</p>
             <span class="wc-more">Read the case <b>→</b></span>
           </div>
         </a>
@@ -1529,48 +1580,217 @@ details.more[open] summary::after { transform: rotate(45deg); }
   <div class="wrap">
     <a class="back" href="#work">← All projects</a>
     <header class="cp-hero">
-      <p class="eyebrow">PMO · Tuntun Sekuritas · 2025</p>
-      <h1>PMO tracking board</h1>
-      <p class="cp-sum">One board where every team sees all projects, PRDs and their status. Late deliveries dropped by 70%.</p>
+      <p class="eyebrow">Business PMO · Tuntun Sekuritas · 2025</p>
+      <h1>PMO tracking board: one timeline for every requirement</h1>
+      <p class="cp-sum">Requirements from several teams, one release train, and no shared picture of what was ready. I built the board, the rules and the weekly rhythm that turned it into one plan. Late deliveries dropped by 70%.</p>
+      <ul class="cs-tags" aria-label="Disciplines"><li>Delivery management</li><li>Release planning</li><li>Process design</li><li>Cross-team alignment</li><li>DingTalk AI table</li></ul>
       <dl class="cp-meta">
-        <div><dt>Role</dt><dd>Business PMO</dd></div>
-        <div><dt>Timeline</dt><dd>Apr – Jul 2025</dd></div>
-        <div><dt>With</dt><dd>Product Director · IT PMO · business teams</dd></div>
-        <div><dt>Tools</dt><dd>Online dashboard on spreadsheets · DingTalk AI</dd></div>
+        <div><dt>Role</dt><dd>Business PMO, co-owner of the submission SOP</dd></div>
+        <div><dt>Timeline</dt><dd>Apr – Jul 2025, board kept in use afterwards</dd></div>
+        <div><dt>With</dt><dd>Business teams · product · IT · QA · leadership approvers</dd></div>
+        <div><dt>Tools</dt><dd>DingTalk AI table: data views, dashboards, forms · email</dd></div>
       </dl>
+      <ul class="cs-scope" aria-label="My scope">
+        <li>Designed the board: one requirement table, views per audience, dashboards per quarter</li>
+        <li>Wrote the business requirement submission SOP (业务需求规范)</li>
+        <li>Set the release math: MRD due two months before go-live</li>
+        <li>Ran the Wednesday 09:30 requirement review and its email</li>
+        <li>Tracked every version's timeline and flagged slips with names attached</li>
+      </ul>
     </header>
+
     <div class="cp-kpis">
       <div><strong>−70%</strong><span>late deliveries</span></div>
-      <div><strong>1 board</strong><span>projects, PRDs, owners, deadlines</span></div>
-      <div><strong>SOPs</strong><span>submission guidelines and schedules</span></div>
+      <div><strong>60+</strong><span>requirements from four teams in one table</span></div>
+      <div><strong>2 months</strong><span>MRD lead time before every release</span></div>
+      <div><strong>Weekly</strong><span>Wednesday 09:30 review of three versions ahead</span></div>
     </div>
-    <figure class="cp-cover v-mint"><div class="kpi">−70%<small>late deliveries</small></div>
-            <div class="kanban" aria-hidden="true">
-              <div class="kcol"><h4>Submitted</h4><div class="kcard"><b>PRD</b><i></i></div><div class="kcard"><b>PRD</b><i></i></div></div>
-              <div class="kcol"><h4>In progress</h4><div class="kcard"><b>Project</b><i></i></div><div class="kcard late"><b>Due soon</b><i></i></div><div class="kcard"><b>Project</b><i></i></div></div>
-              <div class="kcol"><h4>Delivered</h4><div class="kcard done"><b>On time</b><i></i></div><div class="kcard done"><b>On time</b><i></i></div></div>
-            </div>
-            <span class="illus">Illustration of the tracking board</span></figure>
+
+    <figure class="cp-cover v-mint">
+      <div class="dt-win" aria-hidden="true">
+        <div class="dt-bar"><i></i><i></i><i></i><b>Business Timeline 业务时间表</b><span class="dt-seg"><em class="on">Data</em><em>Automation</em><em>App</em><em>Form</em></span><span class="dt-share">Share</span></div>
+        <div class="dt-body">
+          <ul class="dt-side">
+            <li class="h">Data</li>
+            <li>▾ 版本 Version Iteration</li><li class="in on">Timeline Doc</li><li class="in">版本规划 Version Plan</li>
+            <li>整体需求表 All Requirement</li><li>需求追踪 Task Dashboard</li><li>当前版本 Current Version</li>
+            <li>▾ 季度追踪 Q-Dashboard</li><li class="in">Q2 · Q3 · Q4</li>
+            <li>▾ 业务 Business</li><li class="in">提交规范 Submit SOP</li>
+          </ul>
+          <div class="dt-main">
+            <div class="dt-tabs"><span class="on">全部需求 All Req.</span><span>PRD Update</span><span>IT &amp; QA Update</span><span>已上线 Live Update</span></div>
+            <div class="dt-tools"><span>Filtered by Department</span><span>Grouped by 上线版本 Target Version</span></div>
+            <div class="dt-row dt-hd"><span>需求名称 Req. Name</span><span>状态 Status</span><span>Department</span><span>MRD Deadline</span></div>
+            <div class="dt-grp"><em>v1.x.0</em> 14 records</div>
+            <div class="dt-row"><span>Campaign for new users</span><span><b class="st ok">IT Delivered</b></span><span><b class="tm m">M</b>Marketing</span><span>—</span></div>
+            <div class="dt-row"><span>Sector sentiment</span><span><b class="st ok">IT Delivered</b></span><span><b class="tm t">T</b>Trading</span><span>05-07</span></div>
+            <div class="dt-row"><span>Fund page adjustment</span><span><b class="st ok">IT Delivered</b></span><span><b class="tm f">F</b>Funds</span><span>03-12</span></div>
+            <div class="dt-row"><span>Chart improvement</span><span><b class="st as">IT Assess</b></span><span><b class="tm p">P</b>Product</span><span>03-12</span></div>
+            <div class="dt-row"><span>Order shortcut</span><span><b class="st as">IT Assess</b></span><span><b class="tm p">P</b>Product</span><span class="late">late</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Illustration of the DingTalk board · sample rows</figcaption>
+    </figure>
 
     <section class="cp-tldr" aria-label="At a glance">
-      <div><h4>Problem</h4><p>Teams could not see all projects, PRDs and their status in one place.</p></div>
-      <div><h4>What I did</h4><p>Built a central board, wrote submission guidelines and SOPs, and ran reminders and follow-ups.</p></div>
-      <div><h4>Result</h4><p>Late deliveries dropped by 70%.</p></div>
+      <div><h4>Problem</h4><p>Teams could not see all requirements, PRDs and their status in one place, so a release date was set before anyone knew what was ready.</p></div>
+      <div><h4>What I did</h4><p>One requirement table with a view for each audience, a submission SOP with a two-month MRD rule, and a weekly review that looks three versions ahead.</p></div>
+      <div><h4>Result</h4><p>Late deliveries dropped by 70%, and slips showed up weeks before release instead of on release day.</p></div>
     </section>
 
-    <section class="cp-step"><span class="cp-n">01</span><div>
-      <h2>User stories</h2>
-      <ul class="us-list">
-        <li><p class="us">As the Product Director, I want every requirement with its owner, links and deadline in one view, so that I can see what is late before it is late.</p><p class="sol">→ Central tracking board.</p></li>
-        <li><p class="us">As a business team, I want clear submission rules and a schedule, so that our requests arrive complete and on time.</p><p class="sol">→ Submission guidelines, workflows and documentation timelines.</p></li>
-        <li><p class="us">As a project owner, I want reminders before a milestone, so that I don't miss it.</p><p class="sol">→ SOPs, schedules, reminders and follow-ups.</p></li>
-      </ul>
-    </div></section>
+    <section class="cs-sec">
+      <h2>Many teams, one release train</h2>
+      <div class="cs-two">
+        <div><h3>✦ Background</h3><p>Marketing, trading, funds and product all fed requirements into the same app releases. Each team tracked its own list in its own way, and IT and QA only saw a requirement once a PRD reached them. A release could be planned around requests that were still ideas.</p></div>
+        <div><h3>✦ Challenge</h3><p>Give every team <b>one shared timeline</b> without adding meetings, make <b>“approved” mean something you can check</b>, and surface a late MRD or PRD <b>while there is still time to move scope</b>, not on release day.</p></div>
+      </div>
+    </section>
 
-    <section class="cp-step"><span class="cp-n">02</span><div>
-      <h2>Results</h2>
-      <p>Late deliveries dropped by 70%. When I returned to product management, I kept tracking my own project timelines on the same board.</p>
-    </div></section>
+    <section class="cs-sec">
+      <h2>How might we &amp; what success means</h2>
+      <blockquote class="hmw">"How might we let every team see, in one place, what is going into each release and what is late, early enough to change the plan instead of the date?"</blockquote>
+      <div class="goal-grid">
+        <div><span class="g-n">G1</span><b>One source of truth</b><p>Every requirement lives in one table with its team, status, target version and deadlines.</p></div>
+        <div><span class="g-n">G2</span><b>Deadlines work backwards</b><p>The go-live date sets the MRD and PRD deadlines, not the other way round.</p></div>
+        <div><span class="g-n">G3</span><b>Approval leaves a trace</b><p>A sign-off has a timestamp and an approver, per version, inside the document.</p></div>
+        <div><span class="g-n">G4</span><b>A rhythm, not chasing</b><p>One weekly review replaces ad-hoc reminders and side conversations.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>A requirement's journey</h2>
+      <p class="cs-lead">Every requirement moves through the same seven stages, and the board shows where each one is.</p>
+      <ol class="journey j7">
+        <li><b>Idea</b><span>a business team raises it</span></li>
+        <li><b>MRD</b><span>due 2 months before go-live</span></li>
+        <li><b>Wednesday review</b><span>size, priority, version</span></li>
+        <li><b>Signed off</b><span>approver + timestamp</span></li>
+        <li><b>PRD to IT</b><span>product writes, IT assesses</span></li>
+        <li><b>IT delivered</b><span>QA verifies</span></li>
+        <li><b>Live</b><span>moved to the live view</span></li>
+      </ol>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <ul class="pmo-tree">
+            <li class="grp">版本 Version iteration<ul><li>Timeline doc</li><li>Version plan</li></ul></li>
+            <li>整体需求表 All requirements</li>
+            <li>需求追踪 Task dashboard</li>
+            <li>当前版本 Current version</li>
+            <li class="grp">季度追踪 Quarter dashboards<ul><li>Q2 · Q3 · Q4</li></ul></li>
+            <li class="grp">业务 Business<ul><li>提交规范 Submit SOP</li><li>How to use the template</li></ul></li>
+          </ul>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 1 · The board</p>
+          <h3>One table, a view for every audience</h3>
+          <p class="us"><span>User story</span>As a product director, I want every requirement with its team, owner, links and deadline in one view, so that I can see what is late before it is late.</p>
+          <p>I built the Business Timeline in DingTalk's AI table. There is <b>one requirement table</b>, grouped by target version and filterable by department. Each audience gets its own view of the same rows: business teams see their requests, product works the <b>PRD update</b> view, IT and QA work the <b>IT &amp; QA update</b> view, and leadership reads the <b>live update</b> view and the <b>quarterly dashboards</b>. Labels are bilingual, English and 中文, so every team reads it in its own language.</p>
+          <ul class="checks"><li>✔ <b>One source of truth</b>: nobody keeps a private copy.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">提交规范 Submit SOP</p>
+            <h4>业务需求规范</h4>
+            <p class="dd-sub">Business Team Requirement Submission SOP</p>
+            <p class="dd-h">1. MRD Review Confirmation Standard</p>
+            <ul><li class="red">Confirm with the approvers whether sign-off is needed</li><li>Every review has a confirmation timestamp</li></ul>
+            <p class="dd-h">2. MRD Submission Timing</p>
+            <div class="dd-tbl"><span>Target go-live</span><span>MRD in &amp; emailed</span><span>2025/06/30</span><span>before 2025/04/30</span></div>
+            <p class="dd-h">3. Every Wednesday 09:30</p>
+            <ul><li>Small vs large · priority · next versions</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 2 · The SOP</p>
+          <h3>Rules that make “approved” checkable</h3>
+          <p class="us"><span>User story</span>As a business team, I want clear submission rules and a schedule, so that our requests arrive complete and on time.</p>
+          <p>The business requirement SOP (业务需求规范) sets two rules. <b>Timing:</b> an MRD is submitted and emailed for confirmation <b>two months before</b> its release. For a 30 June go-live, the MRD is in before 30 April. <b>Confirmation:</b> each requester checks with the approvers whether their requirement needs leadership sign-off. Every review carries a timestamp, and a requirement confirmed more than once records each version's confirmation and date in the MRD itself.</p>
+          <ul class="checks"><li>✔ <b>Deadlines work backwards</b>: the release date sets the MRD date.</li><li>✔ <b>Approval leaves a trace</b>: a confirmation log in every document.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="pmo-mail">
+            <p class="pm-meta"><span>Every Wednesday · 09:30</span></p>
+            <p class="pm-sub">[Wednesday Requirement Confirmation] Requirement review, version planning and priority</p>
+            <ol>
+              <li><b>Current version</b>approved? on track?</li>
+              <li><b>Next &amp; next-next</b>confirmed? progress?</li>
+              <li><b>MRD → PRD</b>blockers, align with product</li>
+              <li><b>Priorities</b>this week, what changed</li>
+            </ol>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 3 · The rhythm</p>
+          <h3>Wednesday 09:30, three versions ahead</h3>
+          <p class="us"><span>User story</span>As a project owner, I want one fixed moment to raise and confirm requirements, so that I don't have to chase people across chats.</p>
+          <p>Every Wednesday morning the business teams meet to sort the week's requirements into <b>small and large</b>, set their <b>priority</b>, and confirm that the requirements for the <b>next and next-next versions</b> have passed review. A standard email with the same four topics goes out each week, so anyone who missed the meeting reads the same agenda. When an MRD struggles to become a PRD, the product manager joins to resolve it in the room.</p>
+          <ul class="checks"><li>✔ <b>A rhythm, not chasing</b>: one meeting, one email, one agenda.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Catching a slip before release day</h2>
+      <p class="cs-lead">Each version has its own timeline document with the MRD deadline, the PRD-to-IT deadline and the target release. When a date moves, the doc records the new date, the reason, and exactly which requirements are holding it up.</p>
+      <div class="slip-wrap">
+      <div class="dt-doc tl" aria-hidden="true">
+        <p class="dd-crumb">版本 Version Iteration › Timeline Doc</p>
+        <h4>TIMELINE</h4>
+        <p class="dd-h">v1.x TIMELINE</p>
+        <ul><li>MRD to Product deadline: day 0 <em>(business delay, new deadline: +6 days)</em></li><li>PRD to IT deadline: day 14 <em>(3 PRDs not ready, new deadline: +7 days)</em></li><li>Target release: about 7 weeks later</li></ul>
+        <p class="dd-h">3 PRDs not ready:</p>
+        <ol><li>Government bonds</li><li>Tuntun Guidance improvement</li><li>Lock feature</li></ol>
+      </div>
+      <div class="pmo-slip" role="img" aria-label="Example version timeline: MRD to product moved six days because of a business delay, PRD to IT moved seven days because three PRDs were not ready, with the target release still ahead">
+        <div class="ps-row"><b>MRD to product</b><div class="ps-bar"><i class="plan" style="--x:8%"></i><i class="act" style="--x:20%"></i><em style="--x:20%">+6 days · business delay</em></div></div>
+        <div class="ps-row"><b>PRD to IT</b><div class="ps-bar"><i class="plan" style="--x:36%"></i><i class="act" style="--x:50%"></i><em style="--x:50%">+7 days · 3 PRDs not ready</em></div></div>
+        <div class="ps-row"><b>Target release</b><div class="ps-bar"><i class="rel" style="--x:92%"></i><em style="--x:92%" class="r">release</em></div></div>
+        <ul class="ps-legend"><li><i class="plan"></i>planned</li><li><i class="act"></i>actual</li><li><i class="rel"></i>target release</li></ul>
+      </div>
+      </div>
+      <div class="cs-two">
+        <div><h3>✦ What the doc said</h3><ul class="cp-points"><li><b>MRD to product:</b> moved six days, because of a delay on the business side.</li><li><b>PRD to IT:</b> moved seven days, because three PRDs were not ready: government bonds, the Tuntun Guidance improvement and the lock feature.</li><li><b>Target release:</b> stated next to both, so everyone saw the remaining buffer.</li></ul></div>
+        <div><h3>✦ Why it matters</h3><ul class="insights"><li>The slip was visible about seven weeks before release, not on release day.</li><li>Naming the three PRDs turned “we are late” into three owners with three conversations.</li><li>Leadership could choose between moving scope and moving the date while both were still possible.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Delivery &amp; impact</h2>
+      <ul class="cp-points">
+        <li><b>Late deliveries dropped by 70%.</b></li>
+        <li><b>60+ requirements from four teams</b> moved into one table, grouped by target version, with a status for each stage from IT assessment to live.</li>
+        <li><b>Release planning became backward planning:</b> the two-month MRD rule gave product and IT a fixed window to write and assess PRDs.</li>
+        <li><b>The board outlived the role.</b> When I returned to product management, I kept tracking my own project timelines on the same board, the PMO way.</li>
+      </ul>
+      <details class="cp-tech"><summary>For PMOs: how the board is set up</summary>
+        <ul>
+          <li><b>Requirement table fields:</b> requirement name, status (IT Assess → IT Delivered → Live), department, target version, MRD link, MRD deadline, MRD submit date, and hidden working fields per team.</li>
+          <li><b>Views on the same table:</b> all requirements grouped by target version and filtered by department, PRD update, IT &amp; QA update, live update, and a status board.</li>
+          <li><b>Version iteration:</b> a timeline doc per version (MRD deadline, PRD-to-IT deadline, target release, reasons for any change) plus a version plan.</li>
+          <li><b>Dashboards:</b> an all-task dashboard, the current version, and one dashboard per quarter.</li>
+          <li><b>MRD header:</b> document status (To do / Complete), owner, Figma link, change log, confirmation log.</li>
+          <li><b>Onboarding:</b> a “how to use the template” page, so a new requester can submit without asking.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Lessons learned</h2>
+      <ul class="cp-points">
+        <li><b>Plan from the release date backwards.</b> A fixed MRD lead time is the cheapest way to protect a release.</li>
+        <li><b>Record the yes.</b> A timestamped confirmation ends “I thought it was approved” before it starts.</li>
+        <li><b>One table, many views.</b> Teams adopt a shared board when it shows them their own slice, in their own language.</li>
+        <li><b>Name the blocker, not just the delay.</b> “Three PRDs: these three” gets resolved; “we are late” does not.</li>
+      </ul>
+    </section>
 
     <a class="cp-next" href="#case-vip"><span>Next project</span><b>VIP self-service payments →</b></a>
   </div>
