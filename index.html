@@ -679,6 +679,107 @@ details.more[open] summary::after { transform: rotate(45deg); }
 .ps-legend { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; font-size: .78rem; color: var(--muted); } .ps-legend li { position: relative; padding-left: 20px; } .ps-legend i { left: 7px; }
 @media (max-width: 1020px) { .journey.j7 { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 26px; } .slip-wrap { grid-template-columns: 1fr; } .dt-body { grid-template-columns: 170px minmax(0, 1fr); } }
 @media (max-width: 640px) { .journey.j7 { grid-template-columns: 1fr 1fr; } .dt-side { display: none; } .dt-body { grid-template-columns: 1fr; } .dt-seg, .dt-share { display: none; } .dt-win { transform: none; font-size: .68rem; } .dt-row { grid-template-columns: minmax(0, 1.6fr) 1fr 1fr; } .dt-row > span:last-child { display: none; } .ps-row { grid-template-columns: 1fr; gap: 6px; } .pmo-vis { max-width: none; } .ps-bar em { font-size: .6rem; } }
+
+/* ===== Glass theme: colour coded by project, translucent panels over a soft colour field ===== */
+:root {
+  --paper: #f4f2fb; --surface: rgba(255,255,255,.58); --ink: #1b1838; --text: #38345a; --muted: #625d80; --line: rgba(31,29,61,.12);
+  --c-orchid: #ad2f97; --c-coral: #c2481f; --c-sky: #0a6fb0; --c-violet: #5b45c6; --c-mint: #0f7d57; --c-amber: #9a6400;
+  --orchid: var(--c-orchid); --orchid-2: #c85fb6; --orchid-soft: rgba(173,47,151,.12);
+  --navy: rgba(20,16,50,.82); --navy-2: rgba(255,255,255,.08); --on-navy: #f3eef8; --on-navy-muted: #b9b2cf;
+  --pass: #0f7d57; --pass-soft: rgba(15,125,87,.13); --fail: #b4232c; --fail-soft: rgba(180,35,44,.1);
+  --mint: rgba(15,125,87,.13); --lilac: rgba(91,69,198,.13); --peach: rgba(194,72,31,.12);
+  --shadow: 0 1px 2px rgba(31,29,61,.05), 0 18px 44px rgba(50,40,110,.12);
+  --glass-edge: rgba(255,255,255,.7);
+  --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.3), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.26), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.26), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.26), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.22), transparent 62%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0c0a20; --surface: rgba(255,255,255,.06); --ink: #f7f4fc; --text: #dcd7eb; --muted: #aca6c6; --line: rgba(255,255,255,.14);
+    --c-orchid: #f47fdb; --c-coral: #ff9a78; --c-sky: #66ccff; --c-violet: #b0a3ff; --c-mint: #58e0aa; --c-amber: #ffc95e;
+    --orchid: var(--c-orchid); --orchid-2: #f9a8e6; --orchid-soft: rgba(244,127,219,.16);
+    --navy: rgba(9,7,26,.62); --navy-2: rgba(255,255,255,.07); --on-navy: #f3eef8; --on-navy-muted: #b0a9ca;
+    --pass: #58e0aa; --pass-soft: rgba(88,224,170,.15); --fail: #ff959b; --fail-soft: rgba(255,149,155,.14);
+    --mint: rgba(88,224,170,.15); --lilac: rgba(176,163,255,.15); --peach: rgba(255,154,120,.15);
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 44px rgba(0,0,0,.34);
+    --glass-edge: rgba(255,255,255,.16);
+    --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.4), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.24), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.28), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.15), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.2), transparent 62%);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0c0a20; --surface: rgba(255,255,255,.06); --ink: #f7f4fc; --text: #dcd7eb; --muted: #aca6c6; --line: rgba(255,255,255,.14);
+  --c-orchid: #f47fdb; --c-coral: #ff9a78; --c-sky: #66ccff; --c-violet: #b0a3ff; --c-mint: #58e0aa; --c-amber: #ffc95e;
+  --orchid: var(--c-orchid); --orchid-2: #f9a8e6; --orchid-soft: rgba(244,127,219,.16);
+  --navy: rgba(9,7,26,.62); --navy-2: rgba(255,255,255,.07); --on-navy: #f3eef8; --on-navy-muted: #b0a9ca;
+  --pass: #58e0aa; --pass-soft: rgba(88,224,170,.15); --fail: #ff959b; --fail-soft: rgba(255,149,155,.14);
+  --mint: rgba(88,224,170,.15); --lilac: rgba(176,163,255,.15); --peach: rgba(255,154,120,.15);
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 44px rgba(0,0,0,.34);
+  --glass-edge: rgba(255,255,255,.16);
+  --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.4), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.24), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.28), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.15), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.2), transparent 62%);
+}
+html { background: var(--paper); }
+body { margin: 0; }
+html::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--field); pointer-events: none; }
+body { background: transparent; }
+
+/* frosted panels */
+.wcard, .tile, .marquee, .cp-kpis div, .cp-tldr, .us-list li, .cp-tech, .cs-two > div, .cs-roles li, .succ-grid div, .goal-grid div, .vip-matrix, .pmo-mail, .pmo-slip, .hw-tabs, .xp-row, .console, .cp-next, .mini-steps-list li, .flow-steps li {
+  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
+  border-color: var(--line);
+  box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow);
+}
+.top { background: color-mix(in srgb, var(--paper) 52%, transparent); -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%); }
+.cp-tldr div { background: transparent; }
+.chips span { background: var(--surface); border-color: var(--line); }
+.cp-next { background: var(--surface); color: var(--ink); }
+.console { color: var(--on-navy); }
+
+/* each project keeps one colour: card, experience row and case page */
+.wcard, .case-page, .xp-row, .tile { --orchid-soft: color-mix(in srgb, var(--orchid) 16%, transparent); }
+.wcard[href="#case-qa-hub"], #case-qa-hub, .xp-row:nth-child(1) { --orchid: var(--c-orchid); }
+.wcard[href="#case-mutual-funds"], #case-mutual-funds, .xp-row:nth-child(4) { --orchid: var(--c-coral); }
+.wcard[href="#case-sbn"], #case-sbn, .xp-row:nth-child(2) { --orchid: var(--c-sky); }
+.wcard[href="#case-jris"], #case-jris, .xp-row:nth-child(5) { --orchid: var(--c-violet); }
+.wcard[href="#case-pmo"], #case-pmo, .xp-row:nth-child(3) { --orchid: var(--c-mint); }
+.wcard[href="#case-vip"], #case-vip { --orchid: var(--c-amber); }
+
+/* card and cover art */
+.v-orchid { background: linear-gradient(135deg, #d946b8, #8b5cf6); color: #fff; }
+.v-peach { background: linear-gradient(135deg, #ff8a5c, #f0487f); color: #fff; }
+.v-navy { background: linear-gradient(135deg, #2563eb, #06b6d4); color: #fff; }
+.v-lilac { background: linear-gradient(135deg, #7c5cff, #4338ca); color: #fff; }
+.v-mint { background: linear-gradient(135deg, #059669, #0ea5b7); color: #fff; }
+#case-vip .cp-cover { background: linear-gradient(135deg, #f59e0b, #ea580c); }
+.v-mint .wc-big.green { color: #fff; } .v-mint .wc-cap { color: rgba(255,255,255,.88); }
+
+/* impact tiles */
+.t-orchid { background: linear-gradient(135deg, rgba(217,70,184,.9), rgba(124,92,255,.86)); color: #fff; }
+.t-navy { background: color-mix(in srgb, var(--c-sky) 18%, var(--surface)); color: var(--ink); }
+.t-mint { background: color-mix(in srgb, var(--c-mint) 18%, var(--surface)); }
+.t-lilac { background: color-mix(in srgb, var(--c-violet) 20%, var(--surface)); }
+.t-peach { background: color-mix(in srgb, var(--c-coral) 18%, var(--surface)); }
+.t-navy .num { color: var(--c-sky); } .t-mint .num { color: var(--c-mint); } .t-lilac .num { color: var(--c-violet); } .t-peach .num { color: var(--c-coral); }
+
+/* the rotating headline word runs through the project colours */
+.rot > span { padding-right: .12em; background: linear-gradient(90deg, var(--c-coral), var(--c-orchid) 55%, var(--c-violet)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* experience rows become separate glass panels */
+.xp { display: grid; gap: 12px; }
+.xp-row, .xp-row:last-child { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.xp .xp-row:hover { background: color-mix(in srgb, var(--orchid) 9%, var(--surface)); }
+
+.btn.social { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+
+/* readable without blur */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --surface: rgba(255,255,255,.92); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface: rgba(32,28,66,.94); } }
+  :root[data-theme="dark"] { --surface: rgba(32,28,66,.94); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --surface: #ffffff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface: #201c42; } }
+  :root[data-theme="dark"] { --surface: #201c42; }
+}
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -708,6 +809,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
         <div class="cta">
           <a class="btn" href="#work">See the case studies</a>
           <button class="btn ghost copy" type="button" data-copy="jodie.wantono@gmail.com">Copy email</button>
+          <a class="btn ghost social" href="https://www.linkedin.com/in/jodie-w-709377145" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
           <span class="email-line">jodie.wantono@gmail.com</span>
         </div>
       </div>
@@ -750,7 +852,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
           <span class="label">QA Hub · regression testing</span>
           <div>
             <div class="num">2 wks → 2 days</div>
-            <p style="margin-top:10px">After I moved testing fully onto AI-assisted tools, from mid v2.3.0 to v2.4.0.</p>
+            <p style="margin-top:10px">After our QA team moved testing onto AI-assisted tools, from mid v2.3.0 to v2.4.0.</p>
           </div>
           <div class="shrink" aria-hidden="true"><div><i style="width:100%"></i></div><div><i style="width:14.3%"></i></div></div>
           <div class="mini-steps"><span>v2.3.0 start</span><span>v2.4.0 ✓</span><span>v2.5.0</span><span>v2.6.0 ongoing</span></div>
@@ -783,7 +885,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
         <article class="tile span2">
           <span class="label">Languages &amp; team</span>
           <p class="langs-big">中文 <span>native</span> · Bahasa <span>fluent</span> · English <span>fluent</span></p>
-          <p>I mentor QA peers as a colleague and teach them to set up the same AI tools.</p>
+          <p>I help QA teammates set up and use the same AI tools.</p>
         </article>
       </div>
     </section>
@@ -979,6 +1081,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
       <div class="contact-row">
         <span class="big-mail">jodie.wantono@gmail.com</span>
         <button class="btn copy" type="button" data-copy="jodie.wantono@gmail.com">Copy email</button>
+        <a class="btn ghost social" href="https://www.linkedin.com/in/jodie-w-709377145" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
         <span class="note">Jakarta, Indonesia</span>
       </div>
       <p class="note">Internal systems are described at a high level. Visuals are illustrations; no internal screens, hostnames or client data are shown.</p>
@@ -2198,7 +2301,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
   function countUp() {
     document.querySelectorAll("[data-count]").forEach((el) => {
       const end = +el.dataset.count, pre = el.dataset.prefix || "", suf = el.dataset.suffix || "", t0 = performance.now();
-      const step = (t) => { const p = Math.min(1, (t - t0) / 1400); el.textContent = pre + Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
+      const step = (t) => { const p = Math.max(0, Math.min(1, (t - t0) / 1400)); el.textContent = pre + Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     });
   }
