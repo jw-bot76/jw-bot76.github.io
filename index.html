@@ -614,6 +614,15 @@ details.more[open] summary::after { transform: rotate(45deg); }
 .st { font-weight: 700; border-radius: 999px; padding: 2px 8px; font-size: .68rem; } .st.ok { background: #1f9d55; color: #fff; } .st.as { background: #e6f6f4; color: #1d7c74; }
 .tm { width: 16px; height: 16px; border-radius: 50%; display: inline-grid; place-items: center; color: #fff; font-size: .6rem; } .tm.m { background: #6b4fd8; } .tm.t, .tm.p, .tm.f { background: #3370ff; }
 .dt-row .late { color: #d83931; font-weight: 800; }
+.journey.jv li { align-content: start; }
+.st.no { background: #fde8e7; color: #c0322b; }
+.goal-grid.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.vip-matrix { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; display: grid; gap: 14px; margin-bottom: 22px; }
+.vm-head { display: grid; gap: 2px; } .vm-head b { font-family: var(--f-display); color: var(--ink); } .vm-head span, .vm-note { font-size: .8rem; color: var(--muted); }
+.vm-grid { display: grid; grid-template-columns: minmax(96px, 1.6fr) repeat(5, minmax(0, 1fr)); gap: 6px; align-items: center; font-size: .76rem; color: var(--muted); }
+.vm-grid span { min-width: 0; overflow-wrap: anywhere; } .vm-grid i { height: 22px; border-radius: 6px; background: var(--line); } .vm-grid i.p { background: var(--pass); } .vm-grid i.f { background: var(--fail); }
+@media (max-width: 1020px) { .goal-grid.g3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .goal-grid.g3 { grid-template-columns: 1fr; } }
 .pmo-vis { width: 100%; max-width: 240px; }
 .pmo-tree { list-style: none; margin: 0; padding: 16px; background: #fff; color: #1f2329; border-radius: 18px; box-shadow: var(--shadow); font-size: .8rem; display: grid; gap: 6px; }
 .pmo-tree ul { list-style: none; margin: 4px 0 0; padding: 0 0 0 14px; display: grid; gap: 3px; color: #646a73; }
@@ -810,11 +819,11 @@ details.more[open] summary::after { transform: rotate(45deg); }
           </div>
         </a>
         <a class="wcard" href="#case-vip">
-          <div class="wc-vis v-orchid"><div class="wc-swap"><s>Manual reminders</s><b>Self-service portal</b></div></div>
+          <div class="wc-vis v-orchid"><div class="wc-swap"><s>Manual reminders</s><b>Self-service platform</b></div></div>
           <div class="wc-txt">
-            <p class="eyebrow">Payments · J&amp;T Express · 2020 – 2023</p>
-            <h3>VIP self-service payments</h3>
-            <p>Key-account clients track payments and pull their own reports.</p>
+            <p class="eyebrow">Logistics platform · J&amp;T Express · 2021 – 2023</p>
+            <h3>VIP Platform</h3>
+            <p>A full rebuild for key-account clients, with 24,892 active VIP clients: orders, tracking, bills and permissions, in three languages.</p>
             <span class="wc-more">Read the case <b>→</b></span>
           </div>
         </a>
@@ -903,8 +912,8 @@ details.more[open] summary::after { transform: rotate(45deg); }
         </article>
         <article class="xp-row">
           <span class="xp-when">Oct 2020 – Apr 2023</span>
-          <div><h3>IT Product Specialist · Product Manager for JRIS</h3><p class="xp-org">PT Global Jet Express (J&amp;T Express)</p>
-            <ul><li>Reduced stuck parcels by 60–70% and improved SLA with JRIS, a reporting system for web, Android and iOS that I led from proposal, product and API requirements to the end of development (V1.0, June 2022).</li><li>Replaced manual payment reminders with a VIP self-service payment portal.</li></ul></div>
+          <div><h3>IT Product Specialist · Product Manager for JRIS &amp; VIP Platform</h3><p class="xp-org">PT Global Jet Express (J&amp;T Express)</p>
+            <ul><li>Reduced stuck parcels by 60–70% and improved SLA with JRIS, a reporting system for web, Android and iOS that I led from proposal, product and API requirements to the end of development (V1.0, June 2022).</li><li>Rebuilt the VIP Platform for key-account clients (24,892 active VIP clients, Dec 2022), from phased roadmap and field-level requirements to UAT and migration, replacing manual payment reminders with self-service.</li><li>Handled the VIP Admin Console, the data source for the platform and the VIP App, and coordinated shared functions with the app's PM.</li><li>Strengths: structuring large rebuilds, edge-case thinking, owning quality through UAT, and bridging teams in Bahasa Indonesia, English and Mandarin.</li></ul></div>
           <span class="xp-arrow" aria-hidden="true">→</span>
         </article>
         <article class="xp-row">
@@ -1798,49 +1807,334 @@ details.more[open] summary::after { transform: rotate(45deg); }
       </ul>
     </section>
 
-    <a class="cp-next" href="#case-vip"><span>Next project</span><b>VIP self-service payments →</b></a>
+    <a class="cp-next" href="#case-vip"><span>Next project</span><b>VIP Platform →</b></a>
   </div>
 </article>
 
 <!-- ============ VIP ============ -->
-<article class="case-page" id="case-vip" data-title="VIP self-service payments" hidden>
+<article class="case-page" id="case-vip" data-title="VIP Platform" hidden>
   <div class="wrap">
     <a class="back" href="#work">← All projects</a>
     <header class="cp-hero">
-      <p class="eyebrow">Payments · J&amp;T Express · 2020 – 2023</p>
-      <h1>VIP self-service payments</h1>
-      <p class="cp-sum">Finance staff used to remind every VIP client to pay. I delivered a portal where clients track payments and pull their own reports.</p>
+      <p class="eyebrow">Logistics platform · J&amp;T Express · 2021 – 2023</p>
+      <h1>VIP Platform: rebuilding how key clients ship with J&amp;T</h1>
+      <p class="cp-sum">J&amp;T's key-account clients place orders, print waybills, track parcels and settle bills on the VIP Platform. As product manager I took it through a full rebuild: a phased roadmap, field-level requirements, test cases, three languages and the move off the old platform.</p>
+      <ul class="cs-tags" aria-label="Disciplines"><li>Product management</li><li>B2B platform</li><li>Requirements</li><li>UAT</li><li>Platform migration</li><li>Access &amp; data security</li></ul>
       <dl class="cp-meta">
-        <div><dt>Role</dt><dd>IT Product Specialist</dd></div>
-        <div><dt>With</dt><dd>Key-account team · finance team</dd></div>
-        <div><dt>Users</dt><dd>VIP and key-account clients</dd></div>
-        <div><dt>Platform</dt><dd>VIP client portal</dd></div>
+        <div><dt>Role</dt><dd>IT Product Specialist · product manager for the VIP Platform</dd></div>
+        <div><dt>Timeline</dt><dd>Rebuild from Apr 2021, iterations to Apr 2023</dd></div>
+        <div><dt>Team</dt><dd>1 web · 1 iOS · 1 Android · 2 backend engineers · 1 designer</dd></div>
+        <div><dt>Product</dt><dd>VIP Platform (web) and VIP Admin Console</dd></div>
       </dl>
+      <ul class="cs-scope" aria-label="My scope">
+        <li>Planned the rebuild as a phased roadmap</li>
+        <li>Wrote the requirements and submitted them through Jira</li>
+        <li>Defined order-import rules field by field</li>
+        <li>Wrote test cases, ran UAT and tracked every fix</li>
+        <li>Owned the wording in all three languages</li>
+        <li>Planned the move from the old platform to the new one</li>
+        <li>Handled the VIP Admin Console, the data source for the platform and the VIP App</li>
+        <li>Coordinated with the VIP App's PM so shared functions work correctly on both</li>
+      </ul>
     </header>
+
     <div class="cp-kpis">
-      <div><strong>Before</strong><span>finance reminded each client by hand</span></div>
-      <div><strong>After</strong><span>clients check status and pull reports themselves</span></div>
+      <div><strong>24,892</strong><span>active VIP clients in Dec 2022, maintained in the admin console</span></div>
+      <div><strong>14</strong><span>core functions across 7 modules rebuilt in the first phase</span></div>
+      <div><strong>23 × 16</strong><span>import fields × error conditions specified and tested</span></div>
+      <div><strong>1,000</strong><span>orders per import file, with row-level errors</span></div>
     </div>
-    <figure class="cp-cover v-orchid"><div class="swap" aria-hidden="true">
-              <div class="msg old"><small>Before · finance team</small><b>"Reminder: your invoice is due"</b><span>sent by hand to every VIP client</span></div>
-              <div class="msg new"><small>After · client portal</small><strong>Payments</strong><div class="stat"><span class="ok">Paid</span><span>Pending</span><span>Report ↓</span></div><span>clients check status and generate reports themselves</span></div>
-            </div>
-            <span class="illus">Illustration of the change</span></figure>
+
+    <figure class="cp-cover v-orchid">
+      <div class="dt-win" aria-hidden="true">
+        <div class="dt-bar"><i></i><i></i><i></i><b>VIP Platform · Impor Order</b></div>
+        <div class="dt-body">
+          <ul class="dt-side">
+            <li class="h">Menu</li>
+            <li>Beranda</li>
+            <li>▾ Order</li><li class="in">Input Order</li><li class="in on">Impor Order</li><li class="in">Cek Order</li><li class="in">Resi Saya</li><li class="in">Fast Print</li>
+            <li>Layanan</li><li>Tagihan</li><li>Hak Akses</li>
+          </ul>
+          <div class="dt-main">
+            <div class="dt-tabs"><span>Sukses Impor</span><span class="on">Gagal Impor</span></div>
+            <div class="dt-tools"><span>Maksimal impor 1000 data</span></div>
+            <div class="dt-row dt-hd"><span>Row</span><span>Column</span><span>Reason</span><span>Status</span></div>
+            <div class="dt-row"><span>0012 · sample order</span><span>Telepon</span><span>9–16 digits</span><span><b class="st no">Fix</b></span></div>
+            <div class="dt-row"><span>0047 · sample order</span><span>Kota Tujuan</span><span>Not found</span><span><b class="st no">Fix</b></span></div>
+            <div class="dt-row"><span>0103 · sample order</span><span>Berat</span><span>Over limit</span><span><b class="st no">Fix</b></span></div>
+            <div class="dt-row"><span>0218 · sample order</span><span>Telepon</span><span>Corrected</span><span><b class="st ok">Saved</b></span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Illustration of the order import screen · sample rows</figcaption>
+    </figure>
 
     <section class="cp-tldr" aria-label="At a glance">
-      <div><h4>Problem</h4><p>Finance chased each VIP client by hand to pay.</p></div>
-      <div><h4>What I did</h4><p>Worked with key-account and finance teams to deliver a self-service payment portal.</p></div>
-      <div><h4>Result</h4><p>Clients check payment status and generate reports themselves.</p></div>
+      <div><h4>Problem</h4><p>The VIP Platform needed new menus and a new framework, bulk orders needed reliable validation, and finance still reminded each VIP client by hand to pay.</p></div>
+      <div><h4>What I did</h4><p>Broke the rebuild into phases, specified each module down to its field rules and messages, tested it against those rules, and moved clients over from the old platform.</p></div>
+      <div><h4>Result</h4><p>24,892 active VIP clients by Dec 2022. Clients manage orders, tracking and bills themselves on one platform, and check payment status and pull reports without waiting for a reminder.</p></div>
     </section>
 
-    <section class="cp-step"><span class="cp-n">01</span><div>
-      <h2>User stories</h2>
-      <ul class="us-list">
-        <li><p class="us">As a VIP client, I want to see what I owe and what I have paid, so that I don't wait for a reminder.</p><p class="sol">→ Payment monitoring and status in the client portal.</p></li>
-        <li><p class="us">As a VIP client, I want to generate my own payment reports, so that my finance team can reconcile without asking.</p><p class="sol">→ Self-service reports.</p></li>
-        <li><p class="us">As J&amp;T finance, we want clients to pay without chasing, so that our team spends time on exceptions.</p><p class="sol">→ Manual reminders replaced by self-service.</p></li>
+    <section class="cs-sec">
+      <h2>A platform clients run their shipping on</h2>
+      <div class="cs-two">
+        <div><h3>✦ Background</h3><p>VIP clients ship in volume, often through sub-accounts and on behalf of dropshippers. They need to enter or import orders, print waybills, follow parcels and reconcile COD and monthly bills. Payment follow-up relied on finance staff contacting each client by hand.</p></div>
+        <div><h3>✦ Challenge</h3><p>Rebuild the <b>whole platform</b> while clients kept shipping on the old one, stop <b>bad data at import</b> with messages a client can act on, and make every screen work in <b>three languages</b>.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Clients across Indonesia</h2>
+      <p class="cs-lead">A December 2022 export of live VIP accounts shows clients shipping from 430 recorded origin locations, from Sumatra to Maluku. With clients this widely spread, clear self-service matters.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">Java</span><b>Tangerang · Bandung · Jakarta</b><p>Also Bogor, Depok, Serang, Cirebon and Salatiga.</p></div>
+        <div><span class="g-n">Sumatra</span><b>Medan · Palembang · Pekanbaru</b><p>Also Bandar Lampung, Pematang Siantar and Banda Aceh.</p></div>
+        <div><span class="g-n">Kalimantan</span><b>Balikpapan · Banjarmasin · Samarinda</b><p>Also Palangkaraya and Banjarbaru.</p></div>
+        <div><span class="g-n">Sulawesi</span><b>Makassar · Kendari</b><p>Eastern Indonesia, served from the same platform.</p></div>
+        <div><span class="g-n">Bali</span><b>Denpasar</b><p>Served from the same platform.</p></div>
+        <div><span class="g-n">Maluku</span><b>Ambon</b><p>Served from the same platform.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>How might we &amp; what success means</h2>
+      <blockquote class="hmw">"How might we let a key account run its shipping and billing on its own, without slowing down the clients already shipping every day?"</blockquote>
+      <div class="goal-grid">
+        <div><span class="g-n">G1</span><b>Self-service first</b><p>Clients find orders, parcels and bills themselves.</p></div>
+        <div><span class="g-n">G2</span><b>Clean data in bulk</b><p>Every failed row says what to fix and can be fixed in place.</p></div>
+        <div><span class="g-n">G3</span><b>Safe by role</b><p>Each account sees only what it should, and activity leaves a trace.</p></div>
+        <div><span class="g-n">G4</span><b>Move without disruption</b><p>Old and new run side by side until clients have moved.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>A big rebuild, broken into phases</h2>
+      <p class="cs-lead">I planned the first five phases in 2021, shown here with their planned dates. All of them launched, and the work continued in further phases. The release log had reached Phase 16 by mid-2022, and the V1.0 product overview is dated June 2022.</p>
+      <ol class="journey jv">
+        <li><b>Foundation</b><span>Apr – Aug 2021: login, dashboard, orders, tracking, billing, address books, permissions</span></li>
+        <li><b>COD &amp; accounts</b><span>Aug 2021: COD bills, password rules, void marks, help center</span></li>
+        <li><b>Visibility</b><span>Sep 2021: tracking screen, notifications, e-bills, custom columns</span></li>
+        <li><b>Service</b><span>Oct 2021: complaints, consignor import, e-commerce orders, QR login</span></li>
+        <li><b>Trust &amp; growth</b><span>Nov 2021: device and login logs, membership, in-app feedback</span></li>
+      </ol>
+    </section>
+
+    <section class="cs-sec">
+      <h2>The product, piece by piece</h2>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <ul class="pmo-tree">
+            <li>Dashboard</li>
+            <li class="grp">My orders<ul><li>Order input · Order import</li><li>Order management · My waybills</li><li>Fast print · E-commerce binding</li></ul></li>
+            <li class="grp">Service<ul><li>Tracking · Fee check</li><li>Complaints &amp; feedback</li></ul></li>
+            <li class="grp">Finance<ul><li>Monthly bills · COD bills</li></ul></li>
+            <li class="grp">Account<ul><li>Address books · Permissions</li></ul></li>
+          </ul>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 1 · The platform</p>
+          <h3>One place for the whole shipping job</h3>
+          <p class="us"><span>User story</span>As a VIP client, I want to create, print, track and reconcile my shipments in one place, so that I don't depend on J&amp;T staff for routine work.</p>
+          <p>The first phase rebuilt the menus and framework: <b>7 modules and 14 functions</b>, from login and dashboard to order input, import, tracking, monthly bills and permissions. Order management shows whether each order was picked up, delivered, signed, returned or voided. Later phases built on that base.</p>
+          <ul class="checks"><li>✔ <b>Self-service first</b>: clients handle routine work themselves.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">Order import · rules</p>
+            <h4>Before it saves</h4>
+            <ul><li>Phone starts +62, 62 or 0, with 9–16 digits</li><li>Weight follows the service type</li><li>Names up to 50 characters</li><li>Addresses up to 250 characters</li><li>Route and service must be supported</li><li class="red">Duplicate e-commerce order numbers flagged</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 2 · Order import</p>
+          <h3>Bulk orders that explain their own errors</h3>
+          <p class="us"><span>User story</span>As a seller importing many orders, I want to see exactly which rows failed and why, so that I can fix them without re-uploading everything.</p>
+          <p>A client imports up to <b>1,000 rows</b> from an Excel template. I wrote the rules for each field: what is required, valid formats and lengths, what gets cleaned automatically, and the exact message for each failure. Failed rows go to their own tab, where they can be edited and saved. Rows that already succeeded are locked.</p>
+          <ul class="checks"><li>✔ <b>Clean data in bulk</b>: errors appear on the row and column that caused them.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">E-commerce binding · sample</p>
+            <h4>Bind a seller</h4>
+            <p class="dd-h">The client enters</p>
+            <ul><li>Registered e-commerce name</li><li>Phone number</li><li>Waybill source</li></ul>
+            <p class="dd-h">Then</p>
+            <ul><li>J&amp;T shipments appear in order management</li><li>Filter by source: e-commerce</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 3 · E-commerce binding</p>
+          <h3>Marketplace orders in the same view</h3>
+          <p class="us"><span>User story</span>As a client working with sellers and e-commerce platforms, I want those J&amp;T shipments in my VIP account, so that I can monitor everything in one place.</p>
+          <p>Some key accounts also ship through sellers and e-commerce platforms. With e-commerce binding, a client enters the registered e-commerce name, phone number and waybill source. Once bound, orders placed on those platforms and shipped with J&amp;T appear in order management, and a source filter separates them from VIP waybills.</p>
+          <ul class="checks"><li>✔ <b>Self-service first</b>: VIP and e-commerce waybills in one view.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">Notification · sample</p>
+            <h4>COD bill updated</h4>
+            <p class="dd-sub">Your latest COD bill is available to download.</p>
+            <p class="dd-h">Sent when a bill is</p>
+            <ul><li>Created</li><li>Edited: waybill added</li><li>Edited: waybill removed or readjusted</li></ul>
+            <p class="dd-h">In</p>
+            <ul><li>Bahasa Indonesia · English · 中文</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 4 · Bills &amp; payments</p>
+          <h3>From finance chasing to clients checking</h3>
+          <p class="us"><span>User story</span>As a VIP client, I want to see what I owe and what I have paid, and generate my own reports, so that I don't wait for a reminder.</p>
+          <p>Finance staff used to remind every VIP client to pay. With the key-account and finance teams, I delivered payment monitoring and reports clients generate themselves. Most VIP clients pay monthly, so the monthly bill report shows paid and unpaid amounts, discounts and write-offs, plus the waybills behind each month. Clients can also receive e-bills by email, set from the app: automatically (daily, every Monday or on the 1st of the month) or manually for a date range. I also defined COD billing, a COD chart on the dashboard and notices for each bill change, so a client always knows why a total moved.</p>
+          <ul class="checks"><li>✔ <b>Self-service first</b>: clients track payments, and finance can focus on exceptions.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <ul class="pmo-tree">
+            <li class="grp">Login<ul><li>4-character captcha</li><li>Password strength colours</li></ul></li>
+            <li class="grp">Main &amp; sub-accounts<ul><li>Permissions per menu</li><li>See own or all orders</li></ul></li>
+            <li class="grp">Every page<ul><li>Client code + date watermark</li></ul></li>
+            <li class="grp">Customer documents<ul><li>Waiting → Checked or Rejected</li></ul></li>
+          </ul>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 5 · Access &amp; data</p>
+          <h3>Safe by role, traceable by default</h3>
+          <p class="us"><span>User story</span>As a main-account owner, I want to control what my sub-accounts can see and approve what they upload, so that my customers' data stays in the right hands.</p>
+          <p>Main accounts set permissions for their sub-accounts. On-screen data carries a watermark with the client code and date, including in pop-ups, without covering any text. For customer documents I specified a review flow: a user uploads, the main account checks or rejects, a rejected item can be edited and resubmitted, and a report shows the counts. Sender and recipient contact data is also protected with encryption.</p>
+          <ul class="checks"><li>✔ <b>Safe by role</b>: access follows the account, and activity is logged.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">Tracking status · sample</p>
+            <h4>Delivered</h4>
+            <div class="dd-tbl"><span>Bahasa</span><span>Telah diterima oleh…</span><span>English</span><span>Delivered to…</span><span>中文</span><span>已签收</span></div>
+            <p class="dd-h">Also checked</p>
+            <ul><li>Captcha and error messages</li><li>Button labels and hints</li><li>Number formats: 1912 → 1,912</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 6 · Three languages</p>
+          <h3>Wording treated as part of the product</h3>
+          <p class="us"><span>User story</span>As an Indonesian client, I want every message in clear Bahasa Indonesia, so that I never have to guess what an error means.</p>
+          <p>I work in Bahasa Indonesia, English and Mandarin, so I reviewed the product in all three. That meant the 8 tracking events, import errors, buttons and hints. Testing caught Mandarin messages leaking into Indonesian screens, clipped labels and awkward translations, and I tracked each one until it was fixed.</p>
+          <ul class="checks"><li>✔ <b>Self-service first</b>: a clear message saves a support conversation.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <div class="dt-doc">
+            <p class="dd-crumb">Migration · old → new</p>
+            <h4>Side by side</h4>
+            <ul><li>Button on the old login opens the new platform in a new tab</li><li>Watermark kept, same as the old platform</li><li class="red">Fast Print hidden on old: COD watermark plugin issue</li><li>Clients print on the new platform</li></ul>
+          </div>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 7 · Migration</p>
+          <h3>Moving clients over without a hard cutover</h3>
+          <p class="us"><span>User story</span>As a client shipping every day, I want to try the new platform without losing the old one, so that my orders never stop.</p>
+          <p>Old and new ran side by side. A button on the old login page took clients to the new platform. Features moved deliberately: when a plugin problem affected COD watermarks in Fast Print, I hid Fast Print on the old platform and pointed clients to the new one. Changes were logged per phase in Bahasa Indonesia and Mandarin, so business and engineering read the same record.</p>
+          <ul class="checks"><li>✔ <b>Move without disruption</b>: clients moved feature by feature.</li></ul>
+        </div>
+      </div>
+
+      <div class="sol">
+        <div class="pmo-vis" aria-hidden="true">
+          <ul class="pmo-tree">
+            <li class="grp">Data source for<ul><li>VIP Platform</li><li>VIP App</li></ul></li>
+            <li class="grp">Usage<ul><li>Platform vs app users</li><li>Most visited menus</li><li>Time of day · session length</li></ul></li>
+            <li class="grp">Clients<ul><li>Activated VIP clients</li><li>Top 5 VIPs, sellers, dropshippers</li></ul></li>
+            <li class="grp">Operations<ul><li>Language manager</li><li>Feedback replies · logs</li></ul></li>
+          </ul>
+        </div>
+        <div class="sol-txt">
+          <p class="eyebrow">Solution 8 · VIP Admin Console</p>
+          <h3>One console behind two products</h3>
+          <p class="us"><span>User story</span>As the product owner, I want both products reading from one console and to see who uses what, so that they stay consistent and the next phase comes from evidence.</p>
+          <p>My project was the VIP Platform, and the VIP App had its own product manager. I also handled the <b>VIP Admin Console</b>, the data source for both products, and coordinated with the app's PM to make sure the functions they share work correctly on each. Once launched, it maintained VIP client activation, with <b>24,892 active clients</b> in Dec 2022. It also shows active users by channel and account type, most visited menus, usage by time of day, session length and top clients, plus a language manager, feedback replies and logs.</p>
+          <ul class="checks"><li>✔ <b>One source of data</b>: the platform and the app work from the same console.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Testing it the way a client would</h2>
+      <p class="cs-lead">I didn't hand requirements over and wait. I wrote the test cases, ran them on UAT and recorded what actually happened next to what should happen.</p>
+      <div class="vip-matrix" role="img" aria-label="Test matrix of 23 order import fields against 16 error conditions">
+        <div class="vm-head"><b>Order import test matrix</b><span>23 fields × 16 conditions, each with expected and UAT result</span></div>
+        <div class="vm-grid"><span></span><span>Invalid</span><span>Empty</span><span>Too long</span><span>Spaces</span><span>Duplicate</span>
+          <span>Weight</span><i class="p"></i><i class="p"></i><i class="p"></i><i></i><i></i>
+          <span>Sender phone</span><i class="p"></i><i class="p"></i><i class="f"></i><i class="p"></i><i></i>
+          <span>Destination</span><i class="p"></i><i class="p"></i><i></i><i class="f"></i><i></i>
+          <span>E-commerce no.</span><i class="p"></i><i></i><i class="p"></i><i></i><i class="p"></i>
+        </div>
+        <p class="vm-note">Illustration only: a sample of fields and conditions, colours are not actual results</p>
+      </div>
+      <div class="cs-two">
+        <div><h3>✦ What I tested</h3><ul class="cp-points"><li><b>Order import:</b> invalid, empty, too long, leading spaces, service rules, insurance and duplicates.</li><li><b>Special pricing:</b> weight bands tested on my own test client, with the fallback rule written down.</li><li><b>Issue logs:</b> numbered items with before and after evidence, marked done once retested.</li></ul></div>
+        <div><h3>✦ What it caught</h3><ul class="insights"><li>A client priced on only part of a weight range never falls back to the standard price, so missing bands show zero. I documented that rule on 3 Nov 2021.</li><li>Logging out on one device also logged out the same user on another device.</li><li>Order lists did not refresh after a new order until the user searched again.</li><li>An empty item type in the import file showed a generic internal error, so we changed the message.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>What I brought as product manager</h2>
+      <p class="cs-lead">The strengths this project shows, each backed by the work above.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">01</span><b>Structure</b><p>Turned a full platform rebuild into phases with clear scope, status and owners.</p></div>
+        <div><span class="g-n">02</span><b>Edge-case thinking</b><p>Specified behaviour down to each field, limit and error message, before and during development.</p></div>
+        <div><span class="g-n">03</span><b>Ownership through to quality</b><p>Wrote test cases, ran UAT and followed each issue until it was fixed and retested.</p></div>
+        <div><span class="g-n">04</span><b>Technical fluency</b><p>Worked at the level of API calls, backend fields and logs, so engineers got precise requirements.</p></div>
+        <div><span class="g-n">05</span><b>Bridging languages and teams</b><p>Worked across Bahasa Indonesia, English and Mandarin, connecting business, finance, design and engineering, and aligning shared functions with the VIP App's PM.</p></div>
+        <div><span class="g-n">06</span><b>Client and risk judgment</b><p>Moved clients in steps and built in permissions, watermarks, logs and data protection.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Delivery &amp; impact</h2>
+      <ul class="cp-points">
+        <li><b>24,892 active VIP clients</b> in Dec 2022, maintained in the VIP Admin Console.</li>
+        <li><b>Manual payment reminders replaced by self-service:</b> clients check payment status and generate reports themselves.</li>
+        <li><b>Monthly billing in the client's hands:</b> paid, unpaid, discounts and write-offs on one report, plus scheduled e-bills by email.</li>
+        <li><b>A rebuilt platform for key accounts:</b> orders, printing, tracking, billing and permissions in one product.</li>
+        <li><b>Reliable bulk ordering:</b> up to 1,000 rows per file, with errors shown at row and column level.</li>
+        <li><b>A gradual move:</b> old and new ran side by side, with changes logged per phase.</li>
+        <li><b>One console behind two products:</b> the VIP Admin Console supplies data to both the platform and the VIP App.</li>
       </ul>
-    </div></section>
+      <details class="cp-tech"><summary>For engineers: how it was specified</summary>
+        <ul>
+          <li><b>Field mapping:</b> order-entry fields mapped to backend columns, with defaults and where each value comes from.</li>
+          <li><b>Import rules:</b> validation per field, automatic cleanup such as trimming spaces, and limits by service type.</li>
+          <li><b>Availability:</b> an order fails with a message if the origin, destination and service fall outside their maintained window.</li>
+          <li><b>Operation log:</b> account, action, source (platform or app), device, time, plus uploaded and error files for imports.</li>
+          <li><b>Captcha:</b> 4 characters, case-insensitive, refreshable when hard to read.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Lessons learned</h2>
+      <ul class="cp-points">
+        <li><b>Rebuild in phases that clients can feel.</b> A roadmap is easier to change when each phase stands on its own.</li>
+        <li><b>The error message is part of the feature.</b> For bulk tools, a clear failure saves more time than a fast success.</li>
+        <li><b>Write down what the system actually does.</b> Rules found in testing, like pricing fallback, belong in the requirements.</li>
+        <li><b>Test your own requirements.</b> It showed me how much quality depends on testing early.</li>
+      </ul>
+    </section>
 
     <a class="cp-next" href="#case-qa-hub"><span>Next project</span><b>QA Hub →</b></a>
   </div>
