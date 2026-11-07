@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Jodie Wantono — product & QA portfolio">
-<title>Jodie Wantono Portfolio</title>
+<meta name="description" content="QA and test automation lead candidate with six years across product, PMO and QA in fintech and logistics. Case studies, results and CV.">
+<title>Jodie Wantono | QA &amp; Test Automation, Product, PMO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=Mulish:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jw-bot76.github.io/">
+<meta property="og:title" content="Jodie Wantono | QA &amp; Test Automation, Product, PMO">
+<meta property="og:description" content="QA and test automation lead candidate with six years across product, PMO and QA in fintech and logistics. Case studies, results and CV.">
+<meta property="og:image" content="https://jw-bot76.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 /* Layout: kinetic headline + live "release console" hero; bento impact grid; case studies as large coloured
    cards that stack while scrolling (details on demand); hover-list experience. Palette from Jodie's CV. */
@@ -793,6 +802,34 @@ body { background: transparent; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface: #201c42; } }
   :root[data-theme="dark"] { --surface: #201c42; }
 }
+.looking { margin: 18px 0 0; font-size: .98rem; color: var(--text); max-width: 46ch; }
+.looking b { color: var(--ink); font-weight: 700; margin-right: 4px; }
+.looking + .cta { margin-top: 18px; }
+.form-status { margin: 0; font-size: .92rem; color: var(--ink); padding: 10px 12px; border: 1px solid var(--line); }
+
+/* glass fixes: calmer glow, clearer text, lighter blur, no intro, contact form */
+:root { --surface: rgba(255,255,255,.72); --text: #2f2b50; --muted: #57526f;
+  --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.2), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.17), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.17), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.17), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.15), transparent 62%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface: rgba(255,255,255,.085); --text: #e6e2f1; --muted: #bdb7d4;
+  --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.27), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.15), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.17), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.1), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.12), transparent 62%); } }
+:root[data-theme="dark"] { --surface: rgba(255,255,255,.085); --text: #e6e2f1; --muted: #bdb7d4;
+  --field: radial-gradient(60vmax 60vmax at 8% 4%, rgba(124,92,255,.27), transparent 62%), radial-gradient(52vmax 52vmax at 94% 10%, rgba(34,211,238,.15), transparent 62%), radial-gradient(60vmax 60vmax at 84% 62%, rgba(241,120,216,.17), transparent 62%), radial-gradient(56vmax 56vmax at 10% 80%, rgba(255,138,92,.1), transparent 62%), radial-gradient(48vmax 48vmax at 50% 108%, rgba(79,220,164,.12), transparent 62%); }
+.wcard, .tile, .marquee, .cp-kpis div, .cp-tldr, .us-list li, .cp-tech, .cs-two > div, .cs-roles li, .succ-grid div, .goal-grid div, .vip-matrix, .pmo-mail, .pmo-slip, .hw-tabs, .xp-row, .console, .cp-next, .mini-steps-list li, .flow-steps li, .btn.ghost, .icon-btn { -webkit-backdrop-filter: blur(10px) saturate(130%); backdrop-filter: blur(10px) saturate(130%); }
+.intro { display: none !important; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 48px; align-items: start; margin-top: 8px; }
+.contact-side { display: grid; gap: 16px; } .contact-side > p { margin: 0; font-size: 1.05rem; color: var(--text); } .contact-side .btn { width: 100%; }
+.contact-side p.note { font-size: .82rem; color: var(--muted); }
+.contact-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.contact-links .big-mail { margin-left: 6px; font-size: .95rem; font-weight: 700; text-decoration: none; }
+.contact-form { display: grid; gap: 14px; padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow); }
+.contact-form label { display: grid; gap: 6px; font-size: .85rem; font-weight: 700; color: var(--ink); }
+.contact-form input, .contact-form textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; font: 400 .95rem var(--f-body); color: var(--ink); background: color-mix(in srgb, var(--paper) 45%, transparent); border: 1px solid var(--line); border-radius: 12px; }
+.contact-form textarea { min-height: 130px; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--orchid); outline-offset: 1px; }
+.contact-form .btn { width: 100%; }
+.contact-form p.note { margin: 0; font-size: .82rem; color: var(--muted); }
+.form-status { border-radius: 12px; }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -819,6 +856,7 @@ body { background: transparent; }
         <p class="hero-kicker"><b>Jodie Wantono</b><span>QA &amp; Test Automation · Product · PMO</span><span>Jakarta · 中文 · ID · EN</span></p>
         <h1 id="hero-h">Build quality into every release.<br><span class="soft">Make quality</span> <span class="rot" id="rot"><span>consistent.</span></span></h1>
         <p class="lede">Six years across product, PMO and QA, the last three in fintech. I know the business flow end to end, so I know what to test and why, and I build the automation that tests it.</p>
+        <p class="looking"><b>Looking for</b> QA Lead, Test Automation Lead or QA Manager roles, based in Jakarta.</p>
         <div class="cta">
           <a class="btn" href="#work">See the case studies</a>
           <a class="btn ghost social" href="Jodie-Wantono-CV.pdf" download><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10.5 12 15.5 17 10.5M4 20.5h16"/></svg>Download CV</a>
@@ -1090,13 +1128,22 @@ body { background: transparent; }
     <footer class="contact" id="contact">
       <p class="eyebrow">Contact</p>
       <h2 class="verify" id="trustLine"><span class="vw">Let's</span> <span class="vw">build</span> <span class="vw">something</span> <span class="vw">people</span> <span class="vw">can</span> <span class="vw trust">trust.<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 25 3, 45 10, 62 6 S 90 3, 98 6" pathLength="100"/></svg></span><span class="sweep" aria-hidden="true"></span> <span class="stamp" aria-hidden="true">✓ PASSED</span></h2>
-      <div class="contact-row">
-        <span class="big-mail">jodie.wantono@gmail.com</span>
-        <a class="btn social" href="Jodie-Wantono-CV.pdf" download><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10.5 12 15.5 17 10.5M4 20.5h16"/></svg>Download CV</a>
-        <span class="icon-row"><button class="icon-btn copy" type="button" data-copy="jodie.wantono@gmail.com" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span class="tip">Copy email</span></button><a class="icon-btn" href="https://www.linkedin.com/in/jodie-w-709377145" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="tip">LinkedIn</span></a></span>
-        <span class="note">Jakarta, Indonesia</span>
+      <div class="contact-grid">
+        <div class="contact-side">
+          <p>Tell me about the role, or the quality problem you're working on.</p>
+          <a class="btn social" href="Jodie-Wantono-CV.pdf" download><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10.5 12 15.5 17 10.5M4 20.5h16"/></svg>Download CV</a>
+          <div class="contact-links"><span class="icon-row"><button class="icon-btn copy" type="button" data-copy="jodie.wantono@gmail.com" aria-label="Copy email address"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg><span class="tip">Copy email</span></button><a class="icon-btn" href="https://www.linkedin.com/in/jodie-w-709377145" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="tip">LinkedIn</span></a></span><a class="big-mail" href="mailto:jodie.wantono@gmail.com">jodie.wantono@gmail.com</a></div>
+          <p class="note">Jakarta, Indonesia. Visuals on this site are illustrations; no internal screens, hostnames or client data are shown.</p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>Your name<input name="name" type="text" autocomplete="name" required></label>
+          <label>Your email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Your message<textarea name="message" required></textarea></label>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-status" id="formStatus" role="status" hidden>If your email app didn't open, write to me at jodie.wantono@gmail.com.</p>
+        <p class="note">This opens your email app with the message filled in. Nothing is stored on this site.</p>
+        </form>
       </div>
-      <p class="note">Internal systems are described at a high level. Visuals are illustrations; no internal screens, hostnames or client data are shown.</p>
     </footer>
   </div>
 </main>
@@ -1510,6 +1557,14 @@ body { background: transparent; }
       </ul>
     </header>
 
+    <div class="cp-kpis">
+      <div><strong>−60–70%</strong><span>stuck parcels</span></div>
+      <div><strong>SLA ↑</strong><span>service level improved</span></div>
+      <div><strong>3</strong><span>platforms: web, Android and iOS, V1.0 in June 2022</span></div>
+      <div><strong>15</strong><span>key screens with the experience designed in the PRD</span></div>
+    </div>
+
+
     <figure class="cp-cover v-lilac jris-vis"><figure class="jr-zh">
               <div class="phone real zh"><div class="screen shots single">
                 <img src="img/jris-zh-cp-dist.jpg" alt="JRIS franchise (CP) distribution report in Chinese: total CP points and top 5 cities" width="540" height="960" loading="lazy">
@@ -1524,6 +1579,12 @@ body { background: transparent; }
             </figure>
             <span class="illus">Design mockups with sample data · UX by me · colours &amp; final UI by the J&amp;T designer</span></figure>
 
+    <section class="cp-tldr" aria-label="At a glance">
+      <div><h4>Problem</h4><p>Management relied on staff exporting data and compiling reports by hand. Every new report meant more hours and people, and peak season needed numbers during the day.</p></div>
+      <div><h4>What I did</h4><p>Led JRIS from the first proposal to V1.0: product and API requirements, the UX in the PRD, and following each module through development with J&amp;T's design and engineering teams.</p></div>
+      <div><h4>Result</h4><p>Stuck parcels fell 60–70% and service level improved. Peak-season monitoring became a key indicator for planning staff for the next peak.</p></div>
+    </section>
+
     <section class="cs-sec">
       <h2>Reports without the export</h2>
       <div class="cs-two">
@@ -1534,7 +1595,7 @@ body { background: transparent; }
 
     <section class="cs-sec">
       <h2>Beyond product management</h2>
-      <p class="cs-lead">I owned JRIS from the first slide to V1.0:</p>
+      <p class="cs-lead">I led JRIS from the first slide to V1.0, working with J&amp;T's design and engineering teams:</p>
       <ul class="cs-roles">
         <li><b>Proposal &amp; planning</b><span>the first proposal deck and the plan for the peak-season "war report"</span></li>
         <li><b>Experience design</b><span>flows, references, prototypes and chart types, written into the PRD</span></li>
@@ -1664,6 +1725,17 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <h2>Key choices</h2>
+      <p class="cs-lead">The product decisions that shaped JRIS, beyond the feature list.</p>
+      <div class="goal-grid">
+        <div><span class="g-n">Rollout</span><b>Android first</b><p>Android led development, web followed, and iOS came later because of resources, so the product could ship in stages.</p></div>
+        <div><span class="g-n">Consistency</span><b>One report pattern</b><p>Every module reads the same way: today against yesterday, a top-5 ranking, a 7-day trend and a filter. Users learn it once.</p></div>
+        <div><span class="g-n">Peak season</span><b>A report of its own</b><p>Peaks got their own targets, forecasts and warnings, not a squeezed-in version of the daily report.</p></div>
+        <div><span class="g-n">Security</span><b>Safe, and still fast</b><p>OTP, device unbinding and login logs protect company data, while fingerprint, face or PIN keep daily use quick.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
       <h2>Fifteen screens I designed the experience for</h2>
       <p class="cs-lead">I designed the user experience and wrote the product and API requirements for every screen; the J&amp;T designer chose the colours and finalized the visual UI. All numbers are sample data from the design mockups.</p>
     </section>
@@ -1707,15 +1779,14 @@ body { background: transparent; }
   <div class="wrap">
     <section class="cs-sec">
       <h2>Delivery &amp; impact</h2>
-      <div class="cp-kpis">
-        <div><strong>−60–70%</strong><span>stuck parcels</span></div>
-        <div><strong>SLA ↑</strong><span>service level improved</span></div>
-        <div><strong>June 2022</strong><span>V1.0 on web, Android and iOS</span></div>
-      </div>
+      <ul class="cp-points">
+        <li><b>Stuck parcels fell 60–70%,</b> and service level improved.</li>
+        <li><b>V1.0 shipped in June 2022</b> on web, Android and iOS.</li>
+      </ul>
       <p>Peak-season health monitoring became a key indicator for planning staff for the next peak.</p>
       <details class="cp-tech"><summary>For engineers: modules, security and roadmap</summary>
         <ul>
-          <li><b>Network modules:</b> business volume, delivery volume, fees, operation quality, operation timeliness, customer types, peak-season and history reports.</li>
+          <li><b>Network modules:</b> business volume, delivery volume, fees, operation quality, operation timeliness, customer types, peak-season, history and distribution center reports.</li>
           <li><b>Franchise (CP) modules:</b> CP volume, CP delivery, CP delivery timeliness, CP distribution.</li>
           <li><b>Performance:</b> data slicing and a light framework for faster queries.</li>
           <li><b>Security:</b> phone or email OTP, device unbinding, login logs, a limit on simultaneous logins.</li>
@@ -2453,5 +2524,10 @@ body { background: transparent; }
 })();
 </script>
 
+<script>
+document.getElementById("contactForm").addEventListener("submit",function(e){e.preventDefault();var f=e.target;
+var body=f.message.value+"\n\n"+f.name.value+"\n"+f.email.value;
+location.href="mailto:jodie.wantono@gmail.com?subject="+encodeURIComponent("Portfolio enquiry from "+f.name.value)+"&body="+encodeURIComponent(body);document.getElementById("formStatus").hidden=false;});
+</script>
 </body>
 </html>
