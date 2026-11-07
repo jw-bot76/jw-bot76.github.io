@@ -2038,7 +2038,7 @@ body { background: transparent; }
     <header class="cp-hero">
       <p class="eyebrow">Logistics platform · J&amp;T Express · 2021 – 2023</p>
       <h1>VIP Platform: rebuilding how key clients ship with J&amp;T</h1>
-      <p class="cp-sum">J&amp;T's key-account clients place orders, print waybills, track parcels and settle bills on the VIP Platform. As product manager I took it through a full rebuild: a phased roadmap, field-level requirements, test cases, three languages and the move off the old platform.</p>
+      <p class="cp-sum">J&amp;T's key-account clients place orders, print waybills, track parcels and settle bills on the VIP Platform. As product manager I led its full rebuild without stopping the clients already shipping on it: core workflows first, then billing, tracking, self-service and account management, with clients moved over phase by phase.</p>
       <ul class="cs-tags" aria-label="Disciplines"><li>Product management</li><li>B2B platform</li><li>Requirements</li><li>UAT</li><li>Platform migration</li><li>Access &amp; data security</li></ul>
       <dl class="cp-meta">
         <div><dt>Role</dt><dd>IT Product Specialist · product manager for the VIP Platform</dd></div>
@@ -2047,21 +2047,21 @@ body { background: transparent; }
         <div><dt>Product</dt><dd>VIP Platform (web) and VIP Admin Console</dd></div>
       </dl>
       <ul class="cs-scope" aria-label="My scope">
-        <li>Planned the rebuild as a phased roadmap</li>
-        <li>Wrote the requirements and submitted them through Jira</li>
-        <li>Defined order-import rules field by field</li>
-        <li>Wrote test cases, ran UAT and tracked every fix</li>
-        <li>Owned the wording in all three languages</li>
-        <li>Planned the move from the old platform to the new one</li>
-        <li>Handled the VIP Admin Console, the data source for the platform and the VIP App</li>
-        <li>Coordinated with the VIP App's PM so shared functions work correctly on both</li>
+        <li>Led the rebuild as a phased roadmap, core workflows first</li>
+        <li>Turned business needs into requirements, user flows and Jira tickets</li>
+        <li>Defined field-level import validation, error messages and cleanup rules</li>
+        <li>Owned UAT: test cases, defect tracking and retesting before release</li>
+        <li>Managed product wording in Bahasa Indonesia, English and Mandarin</li>
+        <li>Planned a phased client migration so daily shipping never stopped</li>
+        <li>Managed the VIP Admin Console, the data source for the platform and the VIP App</li>
+        <li>Aligned shared functions with the VIP App's PM so both products behave the same</li>
       </ul>
     </header>
 
     <div class="cp-kpis">
-      <div><strong>24,892</strong><span>active VIP clients in Dec 2022, maintained in the admin console</span></div>
+      <div><strong>24,892</strong><span>active VIP clients served by the platform across Indonesia, Dec 2022</span></div>
       <div><strong>14</strong><span>core functions across 7 modules rebuilt in the first phase</span></div>
-      <div><strong>23 × 16</strong><span>import fields × error conditions specified and tested</span></div>
+      <div><strong>23 × 16</strong><span>23 import fields, each tested against 16 error conditions</span></div>
       <div><strong>1,000</strong><span>orders per import file, with row-level errors</span></div>
     </div>
 
@@ -2091,8 +2091,8 @@ body { background: transparent; }
 
     <section class="cp-tldr" aria-label="At a glance">
       <div><h4>Problem</h4><p>The VIP Platform needed new menus and a new framework, bulk orders needed reliable validation, and finance still reminded each VIP client by hand to pay.</p></div>
-      <div><h4>What I did</h4><p>Broke the rebuild into phases, specified each module down to its field rules and messages, tested it against those rules, and moved clients over from the old platform.</p></div>
-      <div><h4>Result</h4><p>24,892 active VIP clients by Dec 2022. Clients manage orders, tracking and bills themselves on one platform, and check payment status and pull reports without waiting for a reminder.</p></div>
+      <div><h4>What I did</h4><p>Prioritized the rebuild into phases, specified each module down to its field rules and messages, owned UAT against those rules, and moved clients over without a hard cutover.</p></div>
+      <div><h4>Result</h4><p>A platform serving 24,892 active VIP clients by Dec 2022. Clients manage orders, tracking and bills themselves, and check payment status and pull reports instead of waiting for finance to remind them.</p></div>
     </section>
 
     <section class="cs-sec">
@@ -2129,14 +2129,27 @@ body { background: transparent; }
 
     <section class="cs-sec">
       <h2>A big rebuild, broken into phases</h2>
-      <p class="cs-lead">I planned the first five phases in 2021, shown here with their planned dates. All of them launched, and the work continued in further phases. The release log had reached Phase 16 by mid-2022, and the V1.0 product overview is dated June 2022.</p>
+      <p class="cs-lead">Rebuilding everything at once would have put clients' daily shipping at risk. So I put the workflows clients use every day first, and added billing, visibility, service and security on top. I planned these first five phases in 2021, shown with their planned dates; all of them launched. Work continued in further phases: the release log reached Phase 16 by mid-2022, and the V1.0 product overview was documented in June 2022.</p>
       <ol class="journey jv">
-        <li><b>Foundation</b><span>Apr – Aug 2021: login, dashboard, orders, tracking, billing, address books, permissions</span></li>
-        <li><b>COD &amp; accounts</b><span>Aug 2021: COD bills, password rules, void marks, help center</span></li>
-        <li><b>Visibility</b><span>Sep 2021: tracking screen, notifications, e-bills, custom columns</span></li>
-        <li><b>Service</b><span>Oct 2021: complaints, consignor import, e-commerce orders, QR login</span></li>
-        <li><b>Trust &amp; growth</b><span>Nov 2021: device and login logs, membership, in-app feedback</span></li>
+        <li><b>Core platform</b><span>Apr – Aug 2021: login, dashboard, orders, tracking, billing, address books, permissions</span></li>
+        <li><b>Billing &amp; account management</b><span>Aug 2021: COD bills, password rules, void marks, help center</span></li>
+        <li><b>Tracking &amp; transparency</b><span>Sep 2021: tracking screen, notifications, e-bills, custom columns</span></li>
+        <li><b>Service &amp; integration</b><span>Oct 2021: complaints, consignor import, e-commerce orders, QR login</span></li>
+        <li><b>Security &amp; engagement</b><span>Nov 2021: device and login logs, membership, in-app feedback</span></li>
       </ol>
+    </section>
+
+    <section class="cs-sec">
+      <h2>Key product decisions</h2>
+      <p class="cs-lead">Each decision answers a business problem, not just a feature request.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">D1</span><b>Phased migration, no hard cutover</b><p><em>Problem:</em> clients ship every day, so a broken switch-over stops their business.<br><em>Decision:</em> run old and new side by side and move clients feature by feature.</p></div>
+        <div><span class="g-n">D2</span><b>Self-service first</b><p><em>Problem:</em> finance reminded each VIP client by hand, and routine questions went through J&amp;T staff.<br><em>Decision:</em> let clients see bills, payments and parcels and pull reports themselves.</p></div>
+        <div><span class="g-n">D3</span><b>Validate every field at import</b><p><em>Problem:</em> one bad row in a 1,000-row file means wrong waybills or a full re-upload.<br><em>Decision:</em> rules per field, errors on the exact row and column, and failed rows fixed in place.</p></div>
+        <div><span class="g-n">D4</span><b>Access by role, traceable by default</b><p><em>Problem:</em> main accounts, sub-accounts and dropshippers share one client's data.<br><em>Decision:</em> permissions per menu, watermarks, logs and encrypted contact data.</p></div>
+        <div><span class="g-n">D5</span><b>One console behind two products</b><p><em>Problem:</em> the platform and the VIP App could drift apart.<br><em>Decision:</em> both read from the VIP Admin Console, with shared functions aligned with the app's PM.</p></div>
+        <div><span class="g-n">D6</span><b>Wording is part of the feature</b><p><em>Problem:</em> an unclear error in the wrong language becomes a support call.<br><em>Decision:</em> review every message, status and button in all three languages.</p></div>
+      </div>
     </section>
 
     <section class="cs-sec">
@@ -2312,6 +2325,16 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <h2>Who did what</h2>
+      <p class="cs-lead">A cross-functional team delivered this. Here is where my ownership began and ended.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">Owned (me)</span><b>Plan, rules and quality</b><p>Phased roadmap and priorities, requirements and Jira tickets, field-level import rules, test cases and UAT, wording in three languages, the migration plan and the VIP Admin Console.</p></div>
+        <div><span class="g-n">Coordinated</span><b>With other teams</b><p>Key-account and finance teams on billing and payments, the VIP App's PM on shared functions, and business and engineering through phase-by-phase release logs.</p></div>
+        <div><span class="g-n">Built</span><b>Design and engineering</b><p>1 designer, plus web, iOS, Android and 2 backend engineers, who designed and built the product from those requirements.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
       <h2>What I brought as product manager</h2>
       <p class="cs-lead">The strengths this project shows, each backed by the work above.</p>
       <div class="goal-grid g3">
@@ -2327,7 +2350,7 @@ body { background: transparent; }
     <section class="cs-sec">
       <h2>Delivery &amp; impact</h2>
       <ul class="cp-points">
-        <li><b>24,892 active VIP clients</b> in Dec 2022, maintained in the VIP Admin Console.</li>
+        <li><b>A platform serving 24,892 active VIP clients</b> across Indonesia by Dec 2022, activated and maintained through the VIP Admin Console.</li>
         <li><b>Manual payment reminders replaced by self-service:</b> clients check payment status and generate reports themselves.</li>
         <li><b>Monthly billing in the client's hands:</b> paid, unpaid, discounts and write-offs on one report, plus scheduled e-bills by email.</li>
         <li><b>A rebuilt platform for key accounts:</b> orders, printing, tracking, billing and permissions in one product.</li>
