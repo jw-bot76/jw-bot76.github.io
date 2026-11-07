@@ -319,19 +319,19 @@ details.more[open] summary::after { transform: rotate(45deg); }
 .steps span { font-size: .88rem; color: var(--muted); line-height: 1.45; }
 
 /* experience hover list */
-.xp-row { display: grid; grid-template-columns: 210px minmax(0, 1fr) auto; gap: 8px 28px; padding: 22px 18px; border-top: 1px solid var(--line); border-radius: 14px; transition: background .25s ease, transform .25s ease, opacity .25s ease; align-items: start; }
+.xp-row { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 8px 28px; padding: 22px 18px; border-top: 1px solid var(--line); border-radius: 14px; transition: background .25s ease, transform .25s ease, opacity .25s ease; align-items: start; }
 .xp-row:last-child { border-bottom: 1px solid var(--line); }
 @media (hover: hover) {
-  .xp:hover .xp-row { opacity: .5; }
-  .xp .xp-row:hover { opacity: 1; background: var(--surface); box-shadow: var(--shadow); transform: translateX(6px); }
+  .xp .xp-row:hover { background: var(--surface); }
 }
 .xp-when { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); padding-top: 4px; }
+.xp-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0 0; font-family: var(--f-display); font-weight: 800; font-size: .92rem; }
+.xp-links a { color: var(--orchid); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+.xp-links a:hover { text-decoration-thickness: 3px; }
 .xp-row h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.25; }
 .xp-org { color: var(--orchid); font-weight: 700; font-size: .92rem; margin-top: 2px; }
 .xp-row ul { margin: 10px 0 0; padding-left: 1.05rem; display: grid; gap: 4px; font-size: .95rem; }
 .xp-row ul li::marker { color: var(--orchid); }
-.xp-arrow { font-family: var(--f-display); font-weight: 900; color: var(--orchid); font-size: 1.4rem; opacity: 0; transition: opacity .25s ease, transform .25s ease; }
-.xp-row:hover .xp-arrow { opacity: 1; transform: translateX(4px); }
 
 /* skills */
 .skills { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; }
@@ -405,7 +405,6 @@ details.more[open] summary::after { transform: rotate(45deg); }
   .steps li:nth-child(3) { border-right: 0; }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .xp-row { grid-template-columns: 1fr; }
-  .xp-arrow { display: none; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -930,38 +929,32 @@ details.more[open] summary::after { transform: rotate(45deg); }
         <article class="xp-row">
           <span class="xp-when">May 2026 – Present</span>
           <div><h3>Quality Assurance &amp; Technical Testing</h3><p class="xp-org">PT Tuntun Sekuritas Indonesia</p>
-            <ul><li>Cut regression from 2 weeks to 2 days, and large-project testing from ~1 month to 3–4 days.</li><li>Own testing across API, Android, iOS, web and the Admin Console; built QA Hub.</li><li>Mentor QA peers as a colleague, not a manager, on setting up AI tools.</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
+            <ul><li>With the QA team, cut regression from 2 weeks to 2 days, and large-project testing from ~1 month to 3–4 days, over several releases of moving to AI-assisted testing.</li><li>Test releases across API, Android, iOS, web and the Admin Console; built QA Hub, our internal QA tool, from my own daily testing work.</li><li>Help QA teammates set up and use the same AI tools.</li></ul><p class="xp-links"><a href="#case-qa-hub">See QA Hub</a></p></div>
         </article>
         <article class="xp-row">
           <span class="xp-when">Jul 2025 – May 2026</span>
           <div><h3>Mutual Fund &amp; Government Bonds Product Manager</h3><p class="xp-org">PT Tuntun Sekuritas Indonesia</p>
-            <ul><li>Delivered government bonds in 2025 with the DBS API integration and settlement flow.</li><li>Wrote the product requirement documents (PRDs) and checked the Figma designs finalized by the designer.</li><li>After the PMO, kept tracking my own project timelines with the PMO board.</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
+            <ul><li>Delivered government bonds in 2025 with the DBS API integration and settlement flow.</li><li>Wrote the product requirement documents (PRDs) and checked the Figma designs finalized by the designer.</li><li>After the PMO, kept tracking my own project timelines with the PMO board.</li></ul><p class="xp-links"><a href="#case-sbn">See Government bonds</a></p></div>
         </article>
         <article class="xp-row">
           <span class="xp-when">Apr 2025 – Jul 2025</span>
           <div><h3>Business PMO</h3><p class="xp-org">PT Tuntun Sekuritas Indonesia</p>
-            <ul><li>Reduced late deliveries by 70% with a central tracking board of projects, PRDs and statuses.</li><li>Wrote submission guidelines, SOPs and schedules for business teams.</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
+            <ul><li>Helped teams reduce late deliveries by 70% by running a central tracking board of projects, PRDs and statuses.</li><li>Wrote submission guidelines, SOPs and schedules for business teams.</li></ul><p class="xp-links"><a href="#case-pmo">See PMO tracking board</a></p></div>
         </article>
         <article class="xp-row">
           <span class="xp-when">May 2023 – Apr 2025</span>
           <div><h3>Mutual Fund Business Product Manager</h3><p class="xp-org">Antai Securities Limited, then PT Tuntun Sekuritas Indonesia from 2024</p>
-            <ul><li>Ran market and customer research, collecting respondent data and presenting research reports every week.</li><li>Owned the customer UI/UX experience: wrote the market requirement documents (MRDs) and built the Figma prototypes.</li><li>Launched the first mutual fund feature in Dec 2023 and a major improvement in Aug 2024.</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
+            <ul><li>Ran market and customer research, collecting respondent data and presenting research reports every week.</li><li>Owned the customer UI/UX experience: wrote the market requirement documents (MRDs) and built the Figma prototypes.</li><li>Launched the first mutual fund feature in Dec 2023 and a major improvement in Aug 2024.</li></ul><p class="xp-links"><a href="#case-mutual-funds">See Mutual funds</a></p></div>
         </article>
         <article class="xp-row">
           <span class="xp-when">Oct 2020 – Apr 2023</span>
           <div><h3>IT Product Specialist · Product Manager for JRIS &amp; VIP Platform</h3><p class="xp-org">PT Global Jet Express (J&amp;T Express)</p>
-            <ul><li>Reduced stuck parcels by 60–70% and improved SLA with JRIS, a reporting system for web, Android and iOS that I led from proposal, product and API requirements to the end of development (V1.0, June 2022).</li><li>Rebuilt the VIP Platform for key-account clients (24,892 active VIP clients, Dec 2022), from phased roadmap and field-level requirements to UAT and migration, replacing manual payment reminders with self-service.</li><li>Handled the VIP Admin Console, the data source for the platform and the VIP App, and coordinated shared functions with the app's PM.</li><li>Strengths: structuring large rebuilds, edge-case thinking, owning quality through UAT, and bridging teams in Bahasa Indonesia, English and Mandarin.</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
+            <ul><li>Helped J&amp;T teams reduce stuck parcels by 60–70% and improve SLA with JRIS, a reporting system for web, Android and iOS that I led from proposal, product and API requirements to the end of development (V1.0, June 2022).</li><li>Rebuilt the VIP Platform for key-account clients (24,892 active VIP clients, Dec 2022), from phased roadmap and field-level requirements to UAT and migration, replacing manual payment reminders with self-service.</li><li>Handled the VIP Admin Console, the data source for the platform and the VIP App, and coordinated shared functions with the app's PM.</li><li>Strengths: structuring large rebuilds, edge-case thinking, owning quality through UAT, and bridging teams in Bahasa Indonesia, English and Mandarin.</li></ul><p class="xp-links"><a href="#case-jris">See JRIS</a><a href="#case-vip">See VIP Platform</a></p></div>
         </article>
         <article class="xp-row">
           <span class="xp-when">Taipei, Taiwan</span>
           <div><h3>Bachelor of Engineering</h3><p class="xp-org">National Taiwan Normal University</p>
             <ul><li>Department of Technology Application and Human Resource Development (科技應用與人力資源發展學系).</li></ul></div>
-          <span class="xp-arrow" aria-hidden="true">→</span>
         </article>
       </div>
     </section>
@@ -1002,12 +995,12 @@ details.more[open] summary::after { transform: rotate(45deg); }
     <header class="cp-hero">
       <p class="eyebrow">Quality engineering · Tuntun Sekuritas · 2026</p>
       <h1>QA Hub</h1>
-      <p class="cp-sum">I moved our testing fully onto AI-assisted tools and built an internal QA tool around it. Regression went from two weeks to two days.</p>
+      <p class="cp-sum">Our QA team moved testing onto AI-assisted tools over several releases, and I built an internal QA tool from my own daily testing experience. Regression went from two weeks to two days.</p>
       <dl class="cp-meta">
         <div><dt>Role</dt><dd>Quality Assurance &amp; Technical Testing</dd></div>
         <div><dt>Timeline</dt><dd>2026 · releases v2.3.0 → v2.6.0</dd></div>
         <div><dt>Surfaces</dt><dd>API · Android · iOS · Web · Admin Console</dd></div>
-        <div><dt>Team</dt><dd>QA team; I mentor peers as a colleague</dd></div>
+        <div><dt>Team</dt><dd>QA team; I help peers set up the AI tools</dd></div>
       </dl>
     </header>
     <div class="cp-kpis">
@@ -1043,7 +1036,7 @@ details.more[open] summary::after { transform: rotate(45deg); }
 
     <section class="cp-step"><span class="cp-n">01</span><div>
       <h2>Context</h2>
-      <p>Tuntun Sekuritas ships its trading app in numbered releases. Each release has to be tested on the API, Android, iOS, the web app and the internal Admin Console before it goes out, and I own that testing.</p>
+      <p>Tuntun Sekuritas ships its trading app in numbered releases. Each release has to be tested on the API, Android, iOS, the web app and the internal Admin Console before it goes out. I test those releases as part of the QA team.</p>
     </div></section>
 
     <section class="cp-step"><span class="cp-n">02</span><div>
