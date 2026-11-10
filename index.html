@@ -961,6 +961,30 @@ body { background: transparent; }
 .case-toc .toc-prog { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--orchid); }
 @media (max-width: 640px) { .case-toc { margin-inline: -4px; border-radius: 12px; } .case-toc .toc-label { display: none; } }
 .case-toc .toc-list { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%); padding-inline: 10px; }
+/* case cards: strict headline, metric, context, CTA with a 50/50 visual split */
+.work-grid { grid-template-columns: 1fr; gap: 16px; }
+.work-grid .wcard { flex-direction: row; min-height: 300px; }
+.work-grid .wcard > .wc-vis { flex: 0 0 50%; min-height: 300px; order: 0; }
+.work-grid .wcard > .wc-txt { flex: 0 0 50%; box-sizing: border-box; justify-content: center; padding: 30px 34px; gap: 12px; }
+.work-grid .wc-txt h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.wc-metric { display: grid; gap: 2px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.wc-metric strong { font-family: var(--f-display); font-weight: 900; font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -.035em; line-height: 1.05; color: var(--orchid); white-space: nowrap; }
+.wc-metric span { font-size: .92rem; color: var(--muted); }
+.wc-ctx { margin: 0; font-size: .98rem; color: var(--text); max-width: 46ch; }
+.wc-term, .wc-board { width: min(440px, 100%); justify-self: center; box-sizing: border-box; padding: 16px 18px; border-radius: 14px; background: color-mix(in srgb, currentColor 9%, transparent); border: 1px solid color-mix(in srgb, currentColor 22%, transparent); font-family: var(--f-mono); font-size: .8rem; line-height: 1.85; }
+.wc-term p, .wc-board p { margin: 0; display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+.wc-term .t-bar { justify-content: flex-start; gap: 6px; align-items: center; padding-bottom: 8px; margin-bottom: 6px; border-bottom: 1px dashed color-mix(in srgb, currentColor 30%, transparent); }
+.wc-term .t-bar i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, currentColor 45%, transparent); }
+.wc-term .t-bar span { margin-left: 6px; opacity: .8; }
+.wc-term b { margin-right: 6px; } .wc-term p:nth-child(2) { justify-content: flex-start; }
+.wc-term em, .wc-board b { font-style: normal; font-weight: 600; }
+.wc-board .b-h { font-weight: 600; padding-bottom: 8px; margin-bottom: 6px; border-bottom: 1px dashed color-mix(in srgb, currentColor 30%, transparent); }
+.wc-board .b-h span { font-weight: 400; opacity: .7; }
+.wc-board span { overflow: hidden; text-overflow: ellipsis; }
+.wc-board b { padding: 0 8px; border-radius: 999px; background: color-mix(in srgb, currentColor 16%, transparent); }
+@media (max-width: 860px) { .work-grid .wcard { flex-direction: column; } .work-grid .wcard > .wc-vis, .work-grid .wcard > .wc-txt { flex: none; } .work-grid .wcard > .wc-vis { min-height: 240px; } .work-grid .wcard > .wc-txt { padding: 22px; } }
+@media (max-width: 640px) { .wc-term, .wc-board { font-size: .72rem; } }
+
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -1084,70 +1108,11 @@ body { background: transparent; }
     <section class="block" id="work" aria-labelledby="work-h">
       <div class="head">
         <p class="eyebrow">Selected work</p>
-        <h2 id="work-h">Six projects, one page each</h2>
-        <p>The headline and the number here; open a project for the context, user stories, decisions, screens and results.</p>
+        <h2 id="work-h">Product work, from logistics to fintech</h2>
+        <p>Start with the J&amp;T VIP Platform, my flagship product case. Each project opens with the problem, then the decisions, delivery and results.</p>
       </div>
       <div class="work-grid">
-        <a class="wcard w-wide" href="#case-qa-hub">
-          <div class="wc-vis v-orchid">
-            <div class="wc-big">2 wks <span>→</span> 2 days</div>
-            <div class="wc-bars" aria-hidden="true"><i style="width:100%"></i><i style="width:14.3%"></i></div>
-            <div class="wc-chips"><span>v2.3.0</span><span>v2.4.0 ✓</span><span>v2.5.0</span><span>v2.6.0</span></div>
-          </div>
-          <div class="wc-txt">
-            <p class="eyebrow">Quality engineering · Tuntun Sekuritas · 2026</p>
-            <h3>QA Hub</h3>
-            <p>An internal QA tool and an all-in move to AI-assisted testing cut regression from two weeks to two days.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
-        </a>
-        <a class="wcard" href="#case-mutual-funds">
-          <div class="wc-vis v-peach wc-shot"><img src="img/mf-index-list.jpg" alt="" loading="lazy"><img src="img/mf-home-zh.jpg" alt="" loading="lazy"></div>
-          <div class="wc-txt">
-            <p class="eyebrow">Fintech product · Mutual funds · 2023 – 2024</p>
-            <h3>Mutual funds</h3>
-            <p>My first project: funds grouped by goal, with two checks before you buy. First launch Dec 2023.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
-        </a>
-        <a class="wcard" href="#case-sbn">
-          <div class="wc-vis v-navy">
-            <span class="wc-api">DBS third-party data APIs</span>
-            <ol class="wc-flow"><li>Order booking</li><li>Purchase</li><li>Holdings</li><li>Sell &amp; payout</li></ol>
-          </div>
-          <div class="wc-txt">
-            <p class="eyebrow">Fintech product · Government bonds · 2025</p>
-            <h3>Government bonds</h3>
-            <p>DBS API integration and a full settlement flow, from order booking to payout. Delivered in 2025.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
-        </a>
-        <a class="wcard" href="#case-jris">
-          <div class="wc-vis v-lilac wc-shot"><img src="img/jris-zh-cp-dist.jpg" alt="" loading="lazy"><img src="img/jris-s01-home.jpg" alt="" loading="lazy"></div>
-          <div class="wc-txt">
-            <p class="eyebrow">Logistics product · J&amp;T Express · 2021 – 2022</p>
-            <h3>JRIS reporting system</h3>
-            <p>From my 2021 proposal to V1.0 on web, Android and iOS. Stuck parcels fell 60–70%.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
-        </a>
-        <a class="wcard" href="#case-pmo">
-          <div class="wc-vis v-mint"><div class="wc-big green">−70%</div><p class="wc-cap">late deliveries</p></div>
-          <div class="wc-txt">
-            <p class="eyebrow">PMO · Tuntun Sekuritas · 2025</p>
-            <h3>PMO tracking board</h3>
-            <p>One board, one SOP and one weekly rhythm for every requirement, from MRD to live.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
-        </a>
-        <a class="wcard w-full" href="#case-vip">
-          <div class="wc-txt">
-            <p class="eyebrow">Logistics platform · J&amp;T Express · 2021 – 2023</p>
-            <h3>VIP Platform</h3>
-            <p class="wc-hook">How do you rebuild a platform while clients keep shipping on it?</p>
-            <p>Phase by phase, moving clients over without a hard cutover. By Dec 2022: 24,892 active VIP clients, from Sumatra to Maluku.</p>
-            <span class="wc-more">Read the case <b>→</b></span>
-          </div>
+        <a class="wcard" href="#case-vip">
           <div class="wc-vis wc-parcel" aria-hidden="true">
             <i class="wv-tape"></i>
             <div class="wv-label">
@@ -1159,9 +1124,71 @@ body { background: transparent; }
               <span class="wv-stamp">Self-service</span>
             </div>
           </div>
+          <div class="wc-txt">
+            <p class="eyebrow">Flagship · Logistics platform · J&amp;T Express · 2021 – 2023</p>
+            <h3>J&amp;T Express VIP Platform</h3>
+            <div class="wc-metric"><strong>24,892</strong><span>active VIP clients, Dec 2022</span></div>
+            <p class="wc-ctx">How do you rebuild a platform while clients keep shipping on it? Phase by phase, with no hard cutover, from Sumatra to Maluku.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
+        </a>
+        <a class="wcard" href="#case-mutual-funds">
+          <div class="wc-vis v-peach wc-shot"><img src="img/mf-index-list.jpg" alt="" loading="lazy"><img src="img/mf-home-zh.jpg" alt="" loading="lazy"></div>
+          <div class="wc-txt">
+            <p class="eyebrow">Fintech product · Mutual funds · 2023 – 2024</p>
+            <h3>Mutual funds</h3>
+            <div class="wc-metric"><strong>Dec 2023</strong><span>first fund feature launched</span></div>
+            <p class="wc-ctx">My first project: funds grouped by goal, with two checks before you buy. A major improvement followed in Aug 2024.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
+        </a>
+        <a class="wcard" href="#case-sbn">
+          <div class="wc-vis v-navy">
+            <span class="wc-api">DBS third-party data APIs</span>
+            <ol class="wc-flow"><li>Order booking</li><li>Purchase</li><li>Holdings</li><li>Sell &amp; payout</li></ol>
+          </div>
+          <div class="wc-txt">
+            <p class="eyebrow">Fintech product · Government bonds · 2025</p>
+            <h3>Government bonds</h3>
+            <div class="wc-metric"><strong>4 stages</strong><span>from order booking to payout</span></div>
+            <p class="wc-ctx">DBS third-party data API integration and a full settlement flow, delivered in 2025.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
+        </a>
+        <a class="wcard" href="#case-jris">
+          <div class="wc-vis v-lilac wc-shot"><img src="img/jris-zh-cp-dist.jpg" alt="" loading="lazy"><img src="img/jris-s01-home.jpg" alt="" loading="lazy"></div>
+          <div class="wc-txt">
+            <p class="eyebrow">Logistics product · J&amp;T Express · 2021 – 2022</p>
+            <h3>JRIS reporting system</h3>
+            <div class="wc-metric"><strong>−60–70%</strong><span>stuck parcels, with better SLA</span></div>
+            <p class="wc-ctx">From my 2021 proposal to V1.0 on web, Android and iOS, built to hold up in peak season.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
+        </a>
+        <a class="wcard" href="#case-pmo">
+          <div class="wc-vis v-mint"><div class="wc-board" aria-hidden="true"><p class="b-h">Business timeline · v1.x <span>sample rows</span></p><p><span>Campaign for new users</span><b class="ok">Delivered</b></p><p><span>Fund page adjustment</span><b class="ok">Delivered</b></p><p><span>Chart improvement</span><b class="as">In review</b></p><p><span>Order shortcut</span><b class="late">Late</b></p></div></div>
+          <div class="wc-txt">
+            <p class="eyebrow">PMO · Tuntun Sekuritas · 2025</p>
+            <h3>PMO tracking board</h3>
+            <div class="wc-metric"><strong>−70%</strong><span>late deliveries</span></div>
+            <p class="wc-ctx">One board, one SOP and one weekly rhythm for every requirement, from MRD to live.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
+        </a>
+        <a class="wcard" href="#case-qa-hub">
+          <div class="wc-vis v-orchid"><div class="wc-term" aria-hidden="true"><p class="t-bar"><i></i><i></i><i></i><span>qa-hub · regression run</span></p><p><b>$</b> run regression --release v2.4.0</p><p>AI drafts test cases <em>done</em></p><p>API <em>✓ passed</em></p><p>Android <em>✓ passed</em></p><p>iOS <em>✓ passed</em></p><p>Web <em>✓ passed</em></p><p>Admin Console <em>✓ passed</em></p></div></div>
+          <div class="wc-txt">
+            <p class="eyebrow">Supporting case · Tuntun Sekuritas · 2026</p>
+            <h3>Quality engineering &amp; automation</h3>
+            <div class="wc-metric"><strong>2 wks → 2 days</strong><span>regression testing, with the QA team</span></div>
+            <p class="wc-ctx">How I validate what ships: QA Hub, an internal tool I built from my daily testing work, AI-assisted test design and automation.</p>
+            <span class="wc-more">Read the case <b>→</b></span>
+          </div>
         </a>
       </div>
     </section>
+
+    
 
     <section class="block" id="process" aria-labelledby="process-h">
       <div class="head">
