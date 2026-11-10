@@ -944,6 +944,10 @@ body { background: transparent; }
 .logo-txt { color: #fff; opacity: 1; font-size: .98rem; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logos img { filter: none !important; opacity: 1 !important; } }
 @media (max-width: 640px) { .logos ul { display: grid; grid-template-columns: 1fr 1fr; } .logos li { height: 52px; padding: 0 12px; justify-content: center; } .logos img { height: 20px; } .logos img.ntnu { height: 26px; } .logo-txt { font-size: .8rem; white-space: normal; text-align: center; line-height: 1.2; } }
+.site-foot { border-top: 1px solid var(--line); padding-block: 22px 28px; }
+.site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; }
+.site-foot b { color: var(--ink); font-weight: 800; }
+.site-foot span { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -2515,6 +2519,7 @@ body { background: transparent; }
 
 </div>
 
+<footer class="site-foot"><div class="wrap"><b>Jodie Wantono</b><span>QA &amp; Test Automation | Product | PMO</span></div></footer>
 
 
 <script>
