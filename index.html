@@ -949,6 +949,18 @@ body { background: transparent; }
 .site-foot b { color: var(--ink); font-weight: 800; }
 .site-foot span { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
 .cs-step-label { margin: 0 0 6px; color: var(--orchid); } .cs-first { margin-top: 34px; }
+/* case pages: sticky "On this page" section bar */
+.case-toc { position: sticky; top: var(--toph, 62px); z-index: 5; margin: 6px 0 22px; display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--paper) 78%, transparent); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
+.case-toc .toc-label { flex: none; font-size: .78rem; font-weight: 700; color: var(--muted); padding-left: 4px; }
+.case-toc .toc-list { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
+.case-toc .toc-list::-webkit-scrollbar { display: none; }
+.case-toc button { flex: none; font: inherit; font-family: var(--f-display); font-weight: 700; font-size: .82rem; color: var(--muted); background: transparent; border: 1px solid transparent; border-radius: 999px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+.case-toc button:hover { color: var(--ink); }
+.case-toc button[aria-current="true"] { color: var(--ink); background: color-mix(in srgb, var(--orchid) 16%, transparent); border-color: color-mix(in srgb, var(--orchid) 45%, transparent); }
+.case-toc button:focus-visible { outline: 2px solid var(--orchid); outline-offset: 1px; }
+.case-toc .toc-prog { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--orchid); }
+@media (max-width: 640px) { .case-toc { margin-inline: -4px; border-radius: 12px; } .case-toc .toc-label { display: none; } }
+.case-toc .toc-list { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%); padding-inline: 10px; }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -2723,6 +2735,30 @@ root.querySelectorAll(".idm-btn,.idm-r,.idm-pin").forEach(function(el){el.addEve
 (function(){var r=document.querySelector(".idmap");if(!r)return;
 if(!("IntersectionObserver" in window)){r.classList.add("in");return;}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){r.classList.add("in");io.disconnect();}});},{threshold:.35});io.observe(r);})();
+</script>
+<script>
+(function(){
+var top=document.querySelector(".top");function th(){if(top)document.documentElement.style.setProperty("--toph",top.offsetHeight+"px");}th();addEventListener("resize",th);
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function short(t){t=t.replace(/\s+/g," ").trim();t=t.split(",")[0];if(t.indexOf(" & ")>0)t=t.split(" & ")[0];if(t.length>24){var w=t.split(" "),r="";for(var i=0;i<w.length;i++){if((r+" "+w[i]).trim().length>20)break;r=(r+" "+w[i]).trim();}t=r||w[0];}t=t.replace(/\s+(it\s+)?the\s+way$/i,"");for(var k=0;k<3;k++){t=t.replace(/[:;,.]+$/,"");t=t.replace(/\s+(I|a|an|the|of|for|in|to|every|and|with|as|it|by|is)$/i,"");}return t;}
+document.querySelectorAll(".case-page").forEach(function(page){
+  var hero=page.querySelector(".cp-hero");if(!hero)return;
+  var heads=[].slice.call(page.querySelectorAll("h2")).filter(function(h){return !h.closest(".case-toc");});var stepped=heads.filter(function(h){var p=h.previousElementSibling;return p&&p.classList.contains("cs-step-label");});if(stepped.length>=3)heads=stepped;if(heads.length<3)return;
+  var nav=document.createElement("nav");nav.className="case-toc";nav.setAttribute("aria-label","On this page");
+  nav.innerHTML='<span class="toc-label">On this page</span><div class="toc-list"></div><i class="toc-prog"></i>';
+  var list=nav.querySelector(".toc-list"),prog=nav.querySelector(".toc-prog"),btns=[];
+  function go(el){var off=(top?top.offsetHeight:0)+nav.offsetHeight+18;window.scrollTo({top:el.getBoundingClientRect().top+scrollY-off,behavior:reduce?"auto":"smooth"});}
+  var b0=document.createElement("button");b0.type="button";b0.textContent="Overview";b0.addEventListener("click",function(){window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});});list.appendChild(b0);btns.push([b0,hero]);
+  heads.forEach(function(h){var sec=h.closest("section")||h;var b=document.createElement("button");b.type="button";var lab=h.previousElementSibling;b.textContent=(lab&&lab.classList.contains("cs-step-label"))?lab.textContent.replace(/^\d+\s*·\s*/,"").split(" & ")[0]:short(h.textContent);b.addEventListener("click",function(){go(h);});list.appendChild(b);btns.push([b,sec]);});
+  hero.insertAdjacentElement("afterend",nav);
+  function spy(){if(page.hidden)return;var line=(top?top.offsetHeight:0)+nav.offsetHeight+innerHeight*0.25,cur=btns[0][0];
+    btns.forEach(function(p){if(p[1].getBoundingClientRect().top<=line)cur=p[0];});
+    btns.forEach(function(p){p[0].setAttribute("aria-current",p[0]===cur?"true":"false");});
+    var l=cur.offsetLeft-list.offsetLeft,w=cur.offsetWidth;if(l<list.scrollLeft||l+w>list.scrollLeft+list.clientWidth)list.scrollLeft=l-24;
+    var r=page.getBoundingClientRect(),total=r.height-innerHeight;prog.style.width=(total>0?Math.min(100,Math.max(0,-r.top/total*100)):0)+"%";}
+  addEventListener("scroll",spy,{passive:true});addEventListener("resize",spy);addEventListener("hashchange",function(){setTimeout(spy,50);});setTimeout(spy,60);
+});
+})();
 </script>
 </body>
 </html>
