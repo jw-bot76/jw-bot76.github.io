@@ -985,6 +985,9 @@ body { background: transparent; }
 @media (max-width: 860px) { .work-grid .wcard { flex-direction: column; } .work-grid .wcard > .wc-vis, .work-grid .wcard > .wc-txt { flex: none; } .work-grid .wcard > .wc-vis { min-height: 240px; } .work-grid .wcard > .wc-txt { padding: 22px; } }
 @media (max-width: 640px) { .wc-term, .wc-board { font-size: .72rem; } }
 
+/* phone-only and desktop-only copy */
+.only-mob { display: none; }
+@media (max-width: 640px) { .only-desk { display: none; } .only-mob { display: block; } }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -1243,8 +1246,10 @@ body { background: transparent; }
       <div class="head">
         <p class="eyebrow">Experience</p>
         <h2 id="exp-h">A product thinker with an engineering mindset</h2>
-        <p>My experience spans product development, platform management and software quality. I enjoy understanding business challenges, turning them into clear product requirements, and working with cross-functional teams to deliver them.</p>
-        <p>My quality engineering background adds another view: not only whether a feature shipped, but whether it works as intended for the user. I started as a business product manager for mutual funds at Antai Securities Limited, moved to Tuntun Sekuritas in 2024, ran the PMO, returned to product management, and now test releases as part of the QA team.</p>
+        <p class="only-desk">My experience spans product development, platform management and software quality. I enjoy understanding business challenges, turning them into clear product requirements, and working with cross-functional teams to deliver them.</p>
+        <p class="only-desk">My quality engineering background adds another view: not only whether a feature shipped, but whether it works as intended for the user. I started as a business product manager for mutual funds at Antai Securities Limited, moved to Tuntun Sekuritas in 2024, ran the PMO, returned to product management, and now test releases as part of the QA team.</p>
+        <p class="only-mob">My experience spans product development, platform management, and software quality.</p>
+        <p class="only-mob">I enjoy turning business challenges into clear product requirements and working with cross-functional teams to deliver meaningful solutions.</p>
       </div>
       <div class="xp">
         <article class="xp-row">
