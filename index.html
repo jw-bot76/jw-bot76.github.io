@@ -948,6 +948,7 @@ body { background: transparent; }
 .site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; }
 .site-foot b { color: var(--ink); font-weight: 800; }
 .site-foot span { font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
+.cs-step-label { margin: 0 0 6px; color: var(--orchid); } .cs-first { margin-top: 34px; }
 </style>
 
 <div class="intro" id="intro" aria-hidden="true"><span class="intro-dot"></span><span class="intro-word" id="introWord">Halo</span></div>
@@ -2160,12 +2161,12 @@ body { background: transparent; }
 </article>
 
 <!-- ============ VIP ============ -->
-<article class="case-page" id="case-vip" data-title="VIP Platform" hidden>
+<article class="case-page" id="case-vip" data-title="J&amp;T Express VIP Platform" hidden>
   <div class="wrap">
     <a class="back" href="#work">← All projects</a>
     <header class="cp-hero">
       <p class="eyebrow">Logistics platform · J&amp;T Express · 2021 – 2023</p>
-      <h1>VIP Platform: rebuilding how key clients ship with J&amp;T</h1>
+      <h1>J&amp;T Express VIP Platform</h1>
       <p class="cp-sum">J&amp;T's key-account clients place orders, print waybills, track parcels and settle bills on the VIP Platform. As product manager I led its full rebuild without stopping the clients already shipping on it: core workflows first, then billing, tracking, self-service and account management, with clients moved over phase by phase.</p>
       <ul class="cs-tags" aria-label="Disciplines"><li>Product management</li><li>B2B platform</li><li>Requirements</li><li>UAT</li><li>Platform migration</li><li>Access &amp; data security</li></ul>
       <dl class="cp-meta">
@@ -2217,6 +2218,7 @@ body { background: transparent; }
       <figcaption>Illustration of the order import screen · sample rows</figcaption>
     </figure>
 
+    <p class="eyebrow cs-step-label cs-first">01 · Project overview</p>
     <section class="cp-tldr" aria-label="At a glance">
       <div><h4>Problem</h4><p>The VIP Platform needed new menus and a new framework, bulk orders needed reliable validation, and finance still reminded each VIP client by hand to pay.</p></div>
       <div><h4>What I did</h4><p>Prioritized the rebuild into phases, specified each module down to its field rules and messages, owned UAT against those rules, and moved clients over without a hard cutover.</p></div>
@@ -2224,6 +2226,7 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <p class="eyebrow cs-step-label">02 · Business context</p>
       <h2>A platform clients run their shipping on</h2>
       <div class="cs-two">
         <div><h3>✦ Background</h3><p>VIP clients ship in volume, often through sub-accounts and on behalf of dropshippers. They need to enter or import orders, print waybills, follow parcels and reconcile COD and monthly bills. Payment follow-up relied on finance staff contacting each client by hand.</p></div>
@@ -2251,6 +2254,7 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <p class="eyebrow cs-step-label">03 · Problems &amp; opportunities</p>
       <h2>How might we &amp; what success means</h2>
       <blockquote class="hmw">"How might we let a key account run its shipping and billing on its own, without slowing down the clients already shipping every day?"</blockquote>
       <div class="goal-grid">
@@ -2262,6 +2266,7 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <p class="eyebrow cs-step-label">04 · Product strategy &amp; prioritization</p>
       <h2>A big rebuild, broken into phases</h2>
       <p class="cs-lead">Rebuilding everything at once would have put clients' daily shipping at risk. So I put the workflows clients use every day first, and added billing, visibility, service and security on top. I planned these first five phases in 2021, shown with their planned dates; all of them launched. Work continued in further phases: the release log reached Phase 16 by mid-2022, and the V1.0 product overview was documented in June 2022.</p>
       <ol class="journey jv">
@@ -2287,6 +2292,7 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <p class="eyebrow cs-step-label">05 · Product design &amp; requirements</p>
       <h2>The product, piece by piece</h2>
 
       <div class="sol">
@@ -2320,7 +2326,7 @@ body { background: transparent; }
           <p class="eyebrow">Solution 2 · Order import</p>
           <h3>Bulk orders that explain their own errors</h3>
           <p class="us"><span>User story</span>As a seller importing many orders, I want to see exactly which rows failed and why, so that I can fix them without re-uploading everything.</p>
-          <p>A client imports up to <b>1,000 rows</b> from an Excel template. I wrote the rules for each field: what is required, valid formats and lengths, what gets cleaned automatically, and the exact message for each failure. Failed rows go to their own tab, where they can be edited and saved. Rows that already succeeded are locked.</p>
+          <p>High-volume VIP clients needed to enter many orders at once without losing time to bad rows. I identified those operational needs and shaped the bulk order import workflow, including its validation and error-handling requirements. A client imports up to <b>1,000 rows</b> from an Excel template. I wrote the rules for each field: what is required, valid formats and lengths, what gets cleaned automatically, and the exact message for each failure. Failed rows go to their own tab, where they can be edited and saved. Rows that already succeeded are locked.</p>
           <ul class="checks"><li>✔ <b>Clean data in bulk</b>: errors appear on the row and column that caused them.</li></ul>
         </div>
       </div>
@@ -2440,6 +2446,18 @@ body { background: transparent; }
     </section>
 
     <section class="cs-sec">
+      <p class="eyebrow cs-step-label">06 · Execution &amp; collaboration</p>
+      <h2>Who did what</h2>
+      <p class="cs-lead">A cross-functional team delivered this. Here is where my ownership began and ended.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">Owned (me)</span><b>Plan, rules and quality</b><p>Phased roadmap and priorities, requirements and Jira tickets, field-level import rules, test cases and UAT, wording in three languages, the migration plan and the VIP Admin Console.</p></div>
+        <div><span class="g-n">Coordinated</span><b>With other teams</b><p>Key-account and finance teams on billing and payments, the VIP App's PM on shared functions, and business and engineering through phase-by-phase release logs.</p></div>
+        <div><span class="g-n">Built</span><b>Design and engineering</b><p>1 designer, plus web, iOS, Android and 2 backend engineers, who designed and built the product from those requirements.</p></div>
+      </div>
+    </section>
+
+    <section class="cs-sec">
+      <p class="eyebrow cs-step-label">07 · Quality &amp; validation</p>
       <h2>Testing it the way a client would</h2>
       <p class="cs-lead">I didn't hand requirements over and wait. I wrote the test cases, ran them on UAT and recorded what actually happened next to what should happen.</p>
       <div class="vip-matrix" role="img" aria-label="Test matrix of 23 order import fields against 16 error conditions">
@@ -2458,30 +2476,12 @@ body { background: transparent; }
       </div>
     </section>
 
-    <section class="cs-sec">
-      <h2>Who did what</h2>
-      <p class="cs-lead">A cross-functional team delivered this. Here is where my ownership began and ended.</p>
-      <div class="goal-grid g3">
-        <div><span class="g-n">Owned (me)</span><b>Plan, rules and quality</b><p>Phased roadmap and priorities, requirements and Jira tickets, field-level import rules, test cases and UAT, wording in three languages, the migration plan and the VIP Admin Console.</p></div>
-        <div><span class="g-n">Coordinated</span><b>With other teams</b><p>Key-account and finance teams on billing and payments, the VIP App's PM on shared functions, and business and engineering through phase-by-phase release logs.</p></div>
-        <div><span class="g-n">Built</span><b>Design and engineering</b><p>1 designer, plus web, iOS, Android and 2 backend engineers, who designed and built the product from those requirements.</p></div>
-      </div>
-    </section>
+    
+
+    
 
     <section class="cs-sec">
-      <h2>What I brought as product manager</h2>
-      <p class="cs-lead">The strengths this project shows, each backed by the work above.</p>
-      <div class="goal-grid g3">
-        <div><span class="g-n">01</span><b>Structure</b><p>Turned a full platform rebuild into phases with clear scope, status and owners.</p></div>
-        <div><span class="g-n">02</span><b>Edge-case thinking</b><p>Specified behaviour down to each field, limit and error message, before and during development.</p></div>
-        <div><span class="g-n">03</span><b>Ownership through to quality</b><p>Wrote test cases, ran UAT and followed each issue until it was fixed and retested.</p></div>
-        <div><span class="g-n">04</span><b>Technical fluency</b><p>Worked at the level of API calls, backend fields and logs, so engineers got precise requirements.</p></div>
-        <div><span class="g-n">05</span><b>Bridging languages and teams</b><p>Worked across Bahasa Indonesia, English and Mandarin, connecting business, finance, design and engineering, and aligning shared functions with the VIP App's PM.</p></div>
-        <div><span class="g-n">06</span><b>Client and risk judgment</b><p>Moved clients in steps and built in permissions, watermarks, logs and data protection.</p></div>
-      </div>
-    </section>
-
-    <section class="cs-sec">
+      <p class="eyebrow cs-step-label">08 · Outcomes &amp; learnings</p>
       <h2>Delivery &amp; impact</h2>
       <ul class="cp-points">
         <li><b>A platform serving 24,892 active VIP clients</b> across Indonesia by Dec 2022, activated and maintained through the VIP Admin Console.</li>
@@ -2501,6 +2501,19 @@ body { background: transparent; }
           <li><b>Captcha:</b> 4 characters, case-insensitive, refreshable when hard to read.</li>
         </ul>
       </details>
+    </section>
+
+    <section class="cs-sec">
+      <h2>What I brought as product manager</h2>
+      <p class="cs-lead">The strengths this project shows, each backed by the work above.</p>
+      <div class="goal-grid g3">
+        <div><span class="g-n">01</span><b>Structure</b><p>Turned a full platform rebuild into phases with clear scope, status and owners.</p></div>
+        <div><span class="g-n">02</span><b>Edge-case thinking</b><p>Specified behaviour down to each field, limit and error message, before and during development.</p></div>
+        <div><span class="g-n">03</span><b>Ownership through to quality</b><p>Wrote test cases, ran UAT and followed each issue until it was fixed and retested.</p></div>
+        <div><span class="g-n">04</span><b>Technical fluency</b><p>Worked at the level of API calls, backend fields and logs, so engineers got precise requirements.</p></div>
+        <div><span class="g-n">05</span><b>Bridging languages and teams</b><p>Worked across Bahasa Indonesia, English and Mandarin, connecting business, finance, design and engineering, and aligning shared functions with the VIP App's PM.</p></div>
+        <div><span class="g-n">06</span><b>Client and risk judgment</b><p>Moved clients in steps and built in permissions, watermarks, logs and data protection.</p></div>
+      </div>
     </section>
 
     <section class="cs-sec">
